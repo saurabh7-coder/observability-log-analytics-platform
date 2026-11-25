@@ -1,5 +1,11 @@
 # Observability & Log Analytics Data Platform
 
+[![CI](https://github.com/saurabh7-coder/observability-log-analytics-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/saurabh7-coder/observability-log-analytics-platform/actions/workflows/ci.yml)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![ClickHouse](https://img.shields.io/badge/ClickHouse-OLAP-yellow)
+![Kafka](https://img.shields.io/badge/Apache_Kafka-streaming-black)
+
 **DataOps engineering · Vector + Kafka + ClickHouse + Grafana + Airflow anomaly detection**
 
 Simulates a fleet of microservices emitting logs and metrics, and builds the data platform that
@@ -43,7 +49,7 @@ flowchart LR
 | Shipping | Vector (file source → remap → Kafka sink) |
 | Buffer | Apache Kafka (KRaft mode in Compose) |
 | Storage / query | ClickHouse — partitioned raw table, Kafka engine table, materialized views |
-| Anomaly detection | Python (pandas) rolling 30-min z-score, threshold 3, written back to ClickHouse |
+| Anomaly detection | Python (pandas) rolling 30-min z-score on error rate **and** p95 latency, threshold 3, written back to ClickHouse |
 | Orchestration | Apache Airflow DAG, nightly, with optional Slack webhook alert |
 | Dashboards | Grafana (ClickHouse datasource, provisioned) + Next.js dashboard (Vercel) |
 
@@ -55,21 +61,29 @@ The 8 simulated services: `api-gateway`, `auth-service`, `checkout-service`, `pa
 ```bash
 pip install -r requirements.txt
 
-# 1. Generate 6 hours of logs (seed 42). Default chaos: checkout-service,
-#    minutes 200-234 - error rate jumps to ~42% and latency ~3.8x.
+# 1. Generate 6 hours of logs (seed 42). TWO chaos scenarios are on by default:
+#    a) error burst: checkout-service, minutes 200-234 - error rate ~42%, latency ~3.8x
+#    b) latency degradation: payment-service, minutes 290-319 - latency ~4x,
+#       errors only slightly elevated ("slow, not down"; --no-latency-chaos disables it)
 python3 simulator/log_simulator.py --mode batch --minutes 360 --out data/logs.jsonl
 
 # Try your own incident:
 # python3 simulator/log_simulator.py --mode batch --minutes 360 \
 #   --chaos-service payment-service --chaos-start 120 --chaos-duration 20
 
-# 2. Aggregate -> data/minute_metrics.csv, data/service_summary.csv, src/data/metrics.json
+# 2. Aggregate -> data/minute_metrics.csv, data/service_summary.csv,
+#    src/data/metrics.json (totals + SLO + per-service timeseries),
+#    src/data/log_sample.json (300-log sample for the log explorer)
 python3 pipeline/aggregate.py
 
-# 3. Detect anomalies -> data/anomalies.csv, merged into src/data/metrics.json
+# 3. Detect anomalies -> data/anomalies.csv (with `type`: error_rate | latency),
+#    merged into src/data/metrics.json
 python3 pipeline/anomaly_detection.py
 
-# 4. Dashboard
+# 4. Tests (synthetic, fast - no dataset needed)
+python3 -m pytest tests/ -q
+
+# 5. Dashboard
 npm install
 npm run dev        # http://localhost:3000   (or: npm run build && npm start)
 ```
@@ -78,21 +92,65 @@ npm run dev        # http://localhost:3000   (or: npm run build && npm start)
 
 | Metric | Value |
 |---|---|
-| Total logs generated | **67,189** |
-| Overall error rate | **1.915%** |
-| Overall p95 latency | **221.21 ms** |
-| Anomalies detected | **3** |
-| Top anomaly | **checkout-service, 2026-11-25 03:20 UTC — error rate 42.105%, z-score 15.74, p95 874.66 ms** |
+| Total logs generated | **67,199** |
+| Total errors | **1,319** |
+| Overall error rate | **1.963%** |
+| Overall p95 latency | **229.76 ms** |
+| Overall avg latency | **104.87 ms** |
+| Uptime vs SLO target 99% | **98.037% — SLO missed, error budget remaining 0.0%** |
+| Anomalies detected | **16 — 6 error-rate + 10 latency** |
+| Top error-rate anomaly | **checkout-service, 2026-11-25 03:20 UTC — error rate 42.105%, z-score 15.74, p95 874.66 ms** |
+| Top latency anomaly | **checkout-service, 2026-11-25 03:20 UTC — p95 874.66 ms vs baseline mean 222.07 ms, z-score 20.84** |
+| Top payment-service latency anomaly | **2026-11-25 04:50 UTC — p95 1,063.90 ms vs baseline mean 301.86 ms, z-score 11.39** |
 
-All 3 detected anomalies fall inside the injected chaos window (checkout-service, minutes 200–234),
-which is exactly the incident the detector is supposed to catch.
+Both incidents are caught. The checkout error burst (minutes 200–234) produces 3 error-rate and
+5 latency anomalies; the payment latency degradation (minutes 290–319, window p95 **1,300.5 ms**
+vs a **310.8 ms** baseline ≈ 4.2×, window error rate 8.49% vs 2.08% baseline) produces 5 latency
+anomalies in its opening minutes — exactly the "slow, not down" incident an error-rate-only
+detector would miss.
 
-**Detection method & tuning:** per service, each minute's error rate is compared with the rolling
-baseline of the previous 30 minutes; a minute is flagged at z ≥ 3.0 with ≥ 10 requests that minute.
-One tuning addition over the textbook rule: an absolute floor of 20% error rate. With only 12–45
-requests per service-minute, 1–2 chance errors swing a minute by 7–14 points and the raw z-score
-alone flagged ~71 minutes on this dataset, almost all noise; the floor (a real burst sits at ~42%)
-keeps every genuine chaos detection and removes the false positives.
+**Detection method & tuning:** per service, each minute is compared with the rolling baseline of
+the previous 30 minutes; a minute is flagged at z ≥ 3.0 with ≥ 10 requests that minute. Two
+absolute floors sit on top of the textbook z-score rule, both tuned on this dataset:
+
+- *Error rate ≥ 20%:* with only 12–45 requests per service-minute, 1–2 chance errors swing a
+  minute by 7–14 points and the raw z-score alone flagged ~71 minutes, almost all noise; the
+  floor (a real burst sits at ~42%) keeps the genuine detections.
+- *p95 > 2.5× rolling baseline median (latency detector):* started at 1.8×, which flagged 7
+  noise minutes on low-traffic services whose per-minute p95 is dominated by single-request
+  tails. At 2.5× every latency flag sits inside a real chaos window and the noise is gone.
+
+One honest side effect, kept deliberately: the latency scenario's slightly elevated error rate
+(~6.5% by design on ~15 requests/minute) spiked 3 individual payment-service minutes to 20–25%
+by chance, and the error detector flags them. The measurements are real — and a textbook
+small-sample lesson in why a second, latency-based detector matters.
+
+The SLO numbers are computed honestly from the same run: uptime is 100 − error rate, and the
+error budget remaining vs the 99% target is `max(0, (1 − error_rate / 1%)) × 100` — with a
+1.963% error rate the 1% budget is exhausted, so the dashboard shows **0% remaining** and
+"SLO missed" rather than dressing it up.
+
+## What's new — enhancements
+
+- **Second chaos scenario + latency detector (pipeline):** the simulator now injects a
+  payment-service latency degradation (minutes 290–319, ~4× latency, errors only slightly
+  elevated) alongside the checkout error burst, and `pipeline/anomaly_detection.py` runs a
+  second detector — rolling z-score on per-service p95 latency with a 2.5× median floor.
+  Every anomaly is tagged `type: error_rate | latency` in `data/anomalies.csv` and the
+  dashboard JSON.
+- **Richer aggregation:** `pipeline/aggregate.py` also exports per-service timeseries
+  (`service_timeseries` in metrics.json), a 300-log sample with trace IDs for the log
+  explorer (`src/data/log_sample.json`), and an SLO summary in totals (uptime %, 99% SLO
+  target, error-budget remaining — computed honestly, see above).
+- **Dashboard:** per-service drill-down (click a Service Health row or use the selector),
+  a client-side **live stream mode** (new chart point + log line every ~1.5 s, derived from
+  service baselines), a **log explorer** (service/level filters + text search over endpoint,
+  message and trace ID), an **SLO cards row**, and anomaly types in the anomalies table.
+- **Tests + CI:** a pytest suite (`tests/`) covering simulator determinism/schema/chaos and
+  both detectors on synthetic data — 8 tests, all passing — and a GitHub Actions workflow
+  (`.github/workflows/ci.yml`) that runs pytest and the Next.js build on every push/PR.
+- **Grafana:** the Service Health dashboard gains "Latency Anomalies (highest p95)" and
+  "Per-Service p95 Latency (table)" panels (10 panels total).
 
 ## Run the full stack with Docker Compose
 
@@ -115,7 +173,8 @@ when `SLACK_WEBHOOK_URL` is set.
 
 The dashboard also has a **“Replay chaos scenario”** button that re-injects the recorded incident
 into the charts client-side — the brief's suggested trick for live demos when the full stack is
-not running 24/7.
+not running 24/7 — plus a **live stream mode** that appends simulated live points and log lines,
+a per-service drill-down, and a log explorer for demoing exploration workflows.
 
 ## Deployment (your own accounts)
 
@@ -154,15 +213,19 @@ To refresh the data later: re-run the three pipeline commands above, commit the 
 ## Project structure
 
 ```
-simulator/log_simulator.py        JSON log generator (batch + stream, chaos mode)
-pipeline/aggregate.py             logs.jsonl -> minute metrics + dashboard JSON
-pipeline/anomaly_detection.py     rolling z-score detection -> anomalies.csv + JSON
+simulator/log_simulator.py        JSON log generator (batch + stream, two chaos scenarios)
+pipeline/aggregate.py             logs.jsonl -> minute metrics + dashboard JSON + log sample
+pipeline/anomaly_detection.py     rolling z-score detection (error rate + latency) -> anomalies.csv + JSON
 clickhouse/schema.sql             raw_logs / Kafka table+MV / mv_service_minute / anomalies
 airflow/dags/anomaly_detection_dag.py   nightly DAG + Slack alert
 vector/vector.yaml                file -> Kafka shipping config
 grafana/                          ClickHouse datasource + Service Health dashboard (provisioned)
 docker-compose.yml                Kafka + ClickHouse + Vector + Grafana + simulator
 src/                              Next.js 14 dashboard (app router, inline-SVG charts, API routes)
+src/data/metrics.json             pipeline output: totals + SLO, series, per-service timeseries, anomalies
+src/data/log_sample.json          300-log sample powering the log explorer (/api/logs)
+tests/                            pytest suite (simulator + anomaly detection, synthetic data)
+.github/workflows/ci.yml          CI: pytest + Next.js build on push/PR
 data/                             generated CSVs (logs.jsonl is git-ignored)
 ```
 
