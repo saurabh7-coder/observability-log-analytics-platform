@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: ClickHouse
+    uid: clickhouse
+    type: grafana-clickhouse-datasource
+    access: proxy
+    isDefault: true
+    editable: true
+    jsonData:
+      defaultDatabase: observability
+      host: clickhouse
+      port: 9000
+      protocol: native
+      username: default
+    secureJsonData:
+      password: ""
