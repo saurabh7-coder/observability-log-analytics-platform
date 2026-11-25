@@ -8,15 +8,25 @@ Emits structured JSON logs for 8 fake microservices. Supports:
   * stream mode - keep generating minute-by-minute in real time (for the
                   Docker Compose / Vector -> Kafka -> ClickHouse live stack)
 
-Chaos mode injects an error burst + latency degradation into one service for a
-configurable window, e.g.:
+Chaos mode injects incidents into services for configurable windows. TWO
+scenarios are enabled by default in batch mode:
+
+  1. Error burst (scenario "error"): checkout-service, minutes 200-234 -
+     ~42% of requests fail and latency degrades ~3.8x.
+  2. Latency degradation (scenario "latency"): payment-service, minutes
+     290-319 - latency degrades ~4x while the error rate is only slightly
+     elevated (base + ~4 points). This is the classic "slow, not down"
+     incident that an error-rate-only detector would miss; the latency
+     detector in pipeline/anomaly_detection.py exists to catch it.
 
     python3 simulator/log_simulator.py --mode batch --minutes 360 \
-        --chaos-service checkout-service --chaos-start 200 --chaos-duration 35
+        --chaos-service checkout-service --chaos-start 200 --chaos-duration 35 \
+        --latency-chaos-service payment-service --latency-chaos-start 290 \
+        --latency-chaos-duration 30
 
-The defaults (seed 42, chaos on checkout-service at minute 200 for 35 minutes)
-are chosen so the standard demo dataset always contains one clear incident for
-the anomaly-detection job to find.
+Use --no-latency-chaos to disable scenario 2. The defaults (seed 42) are
+chosen so the standard demo dataset always contains both incidents for the
+anomaly-detection job to find.
 """
 
 import argparse
@@ -54,13 +64,35 @@ METHODS = ["GET", "GET", "GET", "POST", "POST", "PUT", "DELETE"]
 OK_STATUSES = [200, 200, 200, 201, 204, 301, 404]
 ERROR_STATUSES = [500, 502, 503]
 
+# Default chaos scenarios (both on in batch mode; see module docstring).
+DEFAULT_ERROR_CHAOS = {"service": "checkout-service", "start": 200, "duration": 35}
+DEFAULT_LATENCY_CHAOS = {"service": "payment-service", "start": 290, "duration": 30}
 
-def make_log(rng: random.Random, ts: datetime, service: str, cfg: dict, chaos: bool) -> dict:
+
+def chaos_kind(service: str, minute_idx: int, error_chaos, latency_chaos):
+    """Return "error", "latency" or None for a service/minute.
+
+    A chaos spec is {"service": ..., "start": minute, "duration": minutes}
+    or None (scenario disabled). The error scenario wins if both overlap.
+    """
+    for kind, spec in (("error", error_chaos), ("latency", latency_chaos)):
+        if spec and service == spec["service"] \
+                and spec["start"] <= minute_idx < spec["start"] + spec["duration"]:
+            return kind
+    return None
+
+
+def make_log(rng: random.Random, ts: datetime, service: str, cfg: dict, chaos=None) -> dict:
     error_rate = cfg["base_error"]
     latency_multiplier = 1.0
-    if chaos:
+    if chaos == "error":
         error_rate = 0.42          # error burst: ~42% of requests fail
         latency_multiplier = 3.8   # ...and the rest get much slower
+    elif chaos == "latency":
+        # Latency degradation: ~4x slower, errors only slightly elevated
+        # (base 2.5% -> ~6.5% for payment-service) - "slow, not down".
+        error_rate = min(cfg["base_error"] + 0.04, 0.10)
+        latency_multiplier = 4.0
 
     is_error = rng.random() < error_rate
     if is_error:
@@ -90,16 +122,15 @@ def make_log(rng: random.Random, ts: datetime, service: str, cfg: dict, chaos: b
     }
 
 
-def generate_minute(rng, minute_start: datetime, minute_idx: int, args) -> list:
+def generate_minute(rng, minute_start: datetime, minute_idx: int,
+                    error_chaos=DEFAULT_ERROR_CHAOS,
+                    latency_chaos=DEFAULT_LATENCY_CHAOS) -> list:
     logs = []
     for service, cfg in SERVICES.items():
         # Small diurnal-style wobble so traffic is not perfectly flat.
         wobble = 1.0 + 0.25 * ((minute_idx % 60) / 60.0 - 0.5)
         count = max(1, int(round(cfg["rpm"] * wobble * rng.uniform(0.85, 1.15))))
-        chaos = (
-            service == args.chaos_service
-            and args.chaos_start <= minute_idx < args.chaos_start + args.chaos_duration
-        )
+        chaos = chaos_kind(service, minute_idx, error_chaos, latency_chaos)
         for _ in range(count):
             ts = minute_start + timedelta(seconds=rng.uniform(0, 59.999))
             logs.append(make_log(rng, ts, service, cfg, chaos))
@@ -119,8 +150,16 @@ def main():
     p.add_argument("--out", default="data/logs.jsonl", help="Output JSONL file ('-' for stdout)")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--chaos-service", default="checkout-service", choices=list(SERVICES.keys()))
-    p.add_argument("--chaos-start", type=int, default=200, help="Minute index where the chaos window starts")
-    p.add_argument("--chaos-duration", type=int, default=35, help="Chaos window length in minutes")
+    p.add_argument("--chaos-start", type=int, default=200, help="Minute index where the error-burst window starts")
+    p.add_argument("--chaos-duration", type=int, default=35, help="Error-burst window length in minutes")
+    p.add_argument("--latency-chaos-service", default="payment-service", choices=list(SERVICES.keys()),
+                   help="Service hit by the latency-degradation scenario")
+    p.add_argument("--latency-chaos-start", type=int, default=290,
+                   help="Minute index where the latency-degradation window starts")
+    p.add_argument("--latency-chaos-duration", type=int, default=30,
+                   help="Latency-degradation window length in minutes")
+    p.add_argument("--no-latency-chaos", action="store_true",
+                   help="Disable the latency-degradation scenario")
     p.add_argument("--interval", type=float, default=1.0,
                    help="Stream mode only: real seconds to wait per simulated minute")
     p.add_argument("--start-time", default="2026-11-25T00:00:00Z",
@@ -129,6 +168,12 @@ def main():
 
     rng = random.Random(args.seed)
     start = parse_start_time(args.start_time)
+
+    error_chaos = {"service": args.chaos_service, "start": args.chaos_start,
+                   "duration": args.chaos_duration}
+    latency_chaos = None if args.no_latency_chaos else {
+        "service": args.latency_chaos_service, "start": args.latency_chaos_start,
+        "duration": args.latency_chaos_duration}
 
     out_fh = sys.stdout if args.out == "-" else None
     if out_fh is None:
@@ -144,7 +189,8 @@ def main():
                 break
             if args.mode == "stream" and args.minutes and minute_idx >= args.minutes:
                 break
-            logs = generate_minute(rng, start + timedelta(minutes=minute_idx), minute_idx, args)
+            logs = generate_minute(rng, start + timedelta(minutes=minute_idx), minute_idx,
+                                   error_chaos, latency_chaos)
             for log in logs:
                 out_fh.write(json.dumps(log) + "\n")
             out_fh.flush()
@@ -160,9 +206,13 @@ def main():
         if out_fh is not sys.stdout:
             out_fh.close()
 
+    latency_desc = ("disabled" if latency_chaos is None else
+                    f"{latency_chaos['service']} minutes {latency_chaos['start']}-"
+                    f"{latency_chaos['start'] + latency_chaos['duration'] - 1}")
     print(f"Generated {total} logs over {minute_idx} minutes "
-          f"(chaos: {args.chaos_service} minutes {args.chaos_start}-"
-          f"{args.chaos_start + args.chaos_duration - 1})", file=sys.stderr)
+          f"(error chaos: {args.chaos_service} minutes {args.chaos_start}-"
+          f"{args.chaos_start + args.chaos_duration - 1}; "
+          f"latency chaos: {latency_desc})", file=sys.stderr)
 
 
 if __name__ == "__main__":
