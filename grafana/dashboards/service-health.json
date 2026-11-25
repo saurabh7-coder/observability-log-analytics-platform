@@ -1,1 +1,325 @@
-{"description":"Live service health from ClickHouse: request volume, error rate, p95 latency and detected anomalies per microservice.","panels":[{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"unit":"short"}},"gridPos":{"h":6,"w":6,"x":0,"y":0},"id":1,"targets":[{"rawQuery":true,"rawSql":"SELECT count() AS requests FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)","refId":"A"}],"title":"Total Requests (window)","type":"stat"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"thresholds":{"mode":"absolute","steps":[{"color":"green","value":null},{"color":"orange","value":5},{"color":"red","value":10}]},"unit":"percent"}},"gridPos":{"h":6,"w":6,"x":6,"y":0},"id":2,"targets":[{"rawQuery":true,"rawSql":"SELECT round(100.0 * countIf(status_code >= 500) / count(), 2) AS error_rate FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)","refId":"A"}],"title":"Overall Error Rate %","type":"stat"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"unit":"ms"}},"gridPos":{"h":6,"w":6,"x":12,"y":0},"id":3,"targets":[{"rawQuery":true,"rawSql":"SELECT round(quantile(0.95)(latency_ms), 1) AS p95 FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)","refId":"A"}],"title":"Overall p95 Latency (ms)","type":"stat"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"color":{"mode":"thresholds"},"unit":"short"}},"gridPos":{"h":6,"w":6,"x":18,"y":0},"id":4,"targets":[{"rawQuery":true,"rawSql":"SELECT count() AS anomalies FROM observability.anomalies WHERE $__timeFilter(timestamp) AND service IN ($service)","refId":"A"}],"title":"Anomalies Detected","type":"stat"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"unit":"percent"}},"gridPos":{"h":9,"w":12,"x":0,"y":6},"id":5,"targets":[{"rawQuery":true,"rawSql":"SELECT minute AS \"time\", service, error_rate FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute","refId":"A"}],"title":"Error Rate % Over Time (per service)","type":"timeseries"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"unit":"ms"}},"gridPos":{"h":9,"w":12,"x":12,"y":6},"id":6,"targets":[{"rawQuery":true,"rawSql":"SELECT minute AS \"time\", service, p95_latency_ms FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute","refId":"A"}],"title":"p95 Latency Over Time (per service)","type":"timeseries"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"fieldConfig":{"defaults":{"unit":"short"}},"gridPos":{"h":8,"w":12,"x":0,"y":15},"id":7,"targets":[{"rawQuery":true,"rawSql":"SELECT minute AS \"time\", service, requests FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute","refId":"A"}],"title":"Requests per Minute","type":"timeseries"},{"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"gridPos":{"h":8,"w":12,"x":12,"y":15},"id":8,"targets":[{"rawQuery":true,"rawSql":"SELECT timestamp, service, error_rate, z_score, requests, errors, p95_latency_ms FROM observability.anomalies ORDER BY z_score DESC LIMIT 50","refId":"A"}],"title":"Detected Anomalies","type":"table"}],"refresh":"30s","schemaVersion":39,"tags":["observability","clickhouse","logs"],"templating":{"list":[{"current":{"text":"All","value":"$__all"},"datasource":{"type":"grafana-clickhouse-datasource","uid":"clickhouse"},"includeAll":true,"label":"Service","multi":true,"name":"service","query":"SELECT DISTINCT service FROM observability.raw_logs","type":"query"}]},"time":{"from":"now-6h","to":"now"},"timezone":"utc","title":"Service Health - Observability Platform","uid":"service-health","version":1}
+{
+ "description": "Live service health from ClickHouse: request volume, error rate, p95 latency and detected anomalies per microservice.",
+ "panels": [
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "gridPos": {
+    "h": 6,
+    "w": 6,
+    "x": 0,
+    "y": 0
+   },
+   "id": 1,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT count() AS requests FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)",
+     "refId": "A"
+    }
+   ],
+   "title": "Total Requests (window)",
+   "type": "stat"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "thresholds": {
+      "mode": "absolute",
+      "steps": [
+       {
+        "color": "green",
+        "value": null
+       },
+       {
+        "color": "orange",
+        "value": 5
+       },
+       {
+        "color": "red",
+        "value": 10
+       }
+      ]
+     },
+     "unit": "percent"
+    }
+   },
+   "gridPos": {
+    "h": 6,
+    "w": 6,
+    "x": 6,
+    "y": 0
+   },
+   "id": 2,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT round(100.0 * countIf(status_code >= 500) / count(), 2) AS error_rate FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)",
+     "refId": "A"
+    }
+   ],
+   "title": "Overall Error Rate %",
+   "type": "stat"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ms"
+    }
+   },
+   "gridPos": {
+    "h": 6,
+    "w": 6,
+    "x": 12,
+    "y": 0
+   },
+   "id": 3,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT round(quantile(0.95)(latency_ms), 1) AS p95 FROM observability.raw_logs WHERE $__timeFilter(timestamp) AND service IN ($service)",
+     "refId": "A"
+    }
+   ],
+   "title": "Overall p95 Latency (ms)",
+   "type": "stat"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "color": {
+      "mode": "thresholds"
+     },
+     "unit": "short"
+    }
+   },
+   "gridPos": {
+    "h": 6,
+    "w": 6,
+    "x": 18,
+    "y": 0
+   },
+   "id": 4,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT count() AS anomalies FROM observability.anomalies WHERE $__timeFilter(timestamp) AND service IN ($service)",
+     "refId": "A"
+    }
+   ],
+   "title": "Anomalies Detected",
+   "type": "stat"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "percent"
+    }
+   },
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 6
+   },
+   "id": 5,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT minute AS \"time\", service, error_rate FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute",
+     "refId": "A"
+    }
+   ],
+   "title": "Error Rate % Over Time (per service)",
+   "type": "timeseries"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ms"
+    }
+   },
+   "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 12,
+    "y": 6
+   },
+   "id": 6,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT minute AS \"time\", service, p95_latency_ms FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute",
+     "refId": "A"
+    }
+   ],
+   "title": "p95 Latency Over Time (per service)",
+   "type": "timeseries"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 0,
+    "y": 15
+   },
+   "id": 7,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT minute AS \"time\", service, requests FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) ORDER BY minute",
+     "refId": "A"
+    }
+   ],
+   "title": "Requests per Minute",
+   "type": "timeseries"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 12,
+    "y": 15
+   },
+   "id": 8,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT timestamp, service, error_rate, z_score, requests, errors, p95_latency_ms FROM observability.anomalies ORDER BY z_score DESC LIMIT 50",
+     "refId": "A"
+    }
+   ],
+   "title": "Detected Anomalies",
+   "type": "table"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ms"
+    }
+   },
+   "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 0,
+    "y": 23
+   },
+   "id": 9,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT timestamp, service, p95_latency_ms, error_rate, z_score, requests, errors FROM observability.anomalies ORDER BY p95_latency_ms DESC LIMIT 50",
+     "refId": "A"
+    }
+   ],
+   "title": "Latency Anomalies (highest p95)",
+   "type": "table"
+  },
+  {
+   "datasource": {
+    "type": "grafana-clickhouse-datasource",
+    "uid": "clickhouse"
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ms"
+    }
+   },
+   "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 12,
+    "y": 23
+   },
+   "id": 10,
+   "targets": [
+    {
+     "rawQuery": true,
+     "rawSql": "SELECT service, round(max(p95_latency_ms), 1) AS max_p95_ms, round(avg(p95_latency_ms), 1) AS avg_p95_ms, sum(requests) AS requests FROM observability.service_minute WHERE $__timeFilter(minute) AND service IN ($service) GROUP BY service ORDER BY max_p95_ms DESC",
+     "refId": "A"
+    }
+   ],
+   "title": "Per-Service p95 Latency (table)",
+   "type": "table"
+  }
+ ],
+ "refresh": "30s",
+ "schemaVersion": 39,
+ "tags": [
+  "observability",
+  "clickhouse",
+  "logs"
+ ],
+ "templating": {
+  "list": [
+   {
+    "current": {
+     "text": "All",
+     "value": "$__all"
+    },
+    "datasource": {
+     "type": "grafana-clickhouse-datasource",
+     "uid": "clickhouse"
+    },
+    "includeAll": true,
+    "label": "Service",
+    "multi": true,
+    "name": "service",
+    "query": "SELECT DISTINCT service FROM observability.raw_logs",
+    "type": "query"
+   }
+  ]
+ },
+ "time": {
+  "from": "now-6h",
+  "to": "now"
+ },
+ "timezone": "utc",
+ "title": "Service Health - Observability Platform",
+ "uid": "service-health",
+ "version": 2
+}
