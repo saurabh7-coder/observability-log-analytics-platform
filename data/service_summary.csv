@@ -1,0 +1,9 @@
+service,requests,errors,p95_latency_ms,avg_latency_ms,error_rate
+api-gateway,16206,227,180.16,94.52,1.401
+search-service,10753,188,201.49,105.7,1.748
+auth-service,8962,123,94.03,49.44,1.372
+recommendation-service,7921,156,233.89,123.26,1.969
+inventory-service,7173,70,128.35,66.71,0.976
+checkout-service,6472,373,542.34,180.54,5.763
+payment-service,5402,115,312.93,166.61,2.129
+notification-service,4300,35,84.02,43.84,0.814

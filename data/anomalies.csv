@@ -1,0 +1,4 @@
+timestamp,service,error_rate,baseline_mean,baseline_std,z_score,requests,errors,p95_latency_ms
+2026-11-25T03:20:00Z,checkout-service,42.105,0.947,2.615,15.74,19,8,874.66
+2026-11-25T03:21:00Z,checkout-service,44.444,2.351,7.949,5.3,18,8,912.31
+2026-11-25T03:23:00Z,checkout-service,52.632,4.499,11.396,4.22,19,10,1051.59
