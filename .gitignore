@@ -1,0 +1,20 @@
+# dependencies / build
+node_modules/
+.next/
+out/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# generated data (regenerate with the pipeline - see README)
+data/logs.jsonl
+
+# env
+.env
+.env*.local
+
+# misc
+.DS_Store
+*.log
