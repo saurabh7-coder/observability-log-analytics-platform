@@ -1,0 +1,49 @@
+# Vector log-shipping configuration
+# Flow: simulator JSONL file -> parse/validate -> Kafka topic `raw_logs`
+# (ClickHouse consumes from Kafka via the Kafka engine table in
+#  clickhouse/schema.sql). A console sink is kept for local debugging.
+#
+# In Docker Compose the simulator writes to the shared volume mounted at
+# /data, so the file below is /data/logs.jsonl inside the Vector container.
+
+data_dir: /var/lib/vector
+
+sources:
+  simulator_logs:
+    type: file
+    include:
+      - /data/logs.jsonl
+    read_from: beginning
+    ignore_older_secs: 86400
+
+transforms:
+  parse_logs:
+    type: remap
+    inputs:
+      - simulator_logs
+    source: |
+      . = parse_json!(.message)
+      .latency_ms = to_float!(.latency_ms)
+      .status_code = to_int!(.status_code)
+      # Drop malformed lines instead of poisoning the Kafka topic.
+      if !exists(.service) || !exists(.timestamp) {
+        abort
+      }
+
+sinks:
+  kafka_out:
+    type: kafka
+    inputs:
+      - parse_logs
+    bootstrap_servers: kafka:9092
+    topic: raw_logs
+    encoding:
+      codec: json
+    healthcheck: true
+
+  console_out:
+    type: console
+    inputs:
+      - parse_logs
+    encoding:
+      codec: json
