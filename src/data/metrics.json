@@ -1,0 +1,3006 @@
+{
+  "generated_from": "data/logs.jsonl via pipeline/aggregate.py",
+  "window": {
+    "start": "2026-11-25T00:00:00Z",
+    "end": "2026-11-25T05:59:59Z",
+    "minutes": 360
+  },
+  "totals": {
+    "total_logs": 67189,
+    "total_errors": 1287,
+    "overall_error_rate": 1.915,
+    "overall_p95_ms": 221.21,
+    "overall_avg_ms": 101.55,
+    "anomalies_detected": 3,
+    "services_count": 8
+  },
+  "series": [
+    {
+      "timestamp": "2026-11-25T00:00:00Z",
+      "requests": 162,
+      "errors": 2,
+      "error_rate": 1.235,
+      "p95_latency_ms": 200.0,
+      "avg_latency_ms": 93.46
+    },
+    {
+      "timestamp": "2026-11-25T00:01:00Z",
+      "requests": 163,
+      "errors": 2,
+      "error_rate": 1.227,
+      "p95_latency_ms": 231.76,
+      "avg_latency_ms": 97.67
+    },
+    {
+      "timestamp": "2026-11-25T00:02:00Z",
+      "requests": 160,
+      "errors": 2,
+      "error_rate": 1.25,
+      "p95_latency_ms": 194.43,
+      "avg_latency_ms": 96.71
+    },
+    {
+      "timestamp": "2026-11-25T00:03:00Z",
+      "requests": 171,
+      "errors": 1,
+      "error_rate": 0.585,
+      "p95_latency_ms": 238.99,
+      "avg_latency_ms": 103.19
+    },
+    {
+      "timestamp": "2026-11-25T00:04:00Z",
+      "requests": 167,
+      "errors": 4,
+      "error_rate": 2.395,
+      "p95_latency_ms": 202.21,
+      "avg_latency_ms": 97.01
+    },
+    {
+      "timestamp": "2026-11-25T00:05:00Z",
+      "requests": 170,
+      "errors": 5,
+      "error_rate": 2.941,
+      "p95_latency_ms": 203.17,
+      "avg_latency_ms": 96.59
+    },
+    {
+      "timestamp": "2026-11-25T00:06:00Z",
+      "requests": 179,
+      "errors": 2,
+      "error_rate": 1.117,
+      "p95_latency_ms": 222.82,
+      "avg_latency_ms": 96.88
+    },
+    {
+      "timestamp": "2026-11-25T00:07:00Z",
+      "requests": 173,
+      "errors": 3,
+      "error_rate": 1.734,
+      "p95_latency_ms": 201.15,
+      "avg_latency_ms": 91.82
+    },
+    {
+      "timestamp": "2026-11-25T00:08:00Z",
+      "requests": 164,
+      "errors": 2,
+      "error_rate": 1.22,
+      "p95_latency_ms": 213.77,
+      "avg_latency_ms": 96.59
+    },
+    {
+      "timestamp": "2026-11-25T00:09:00Z",
+      "requests": 166,
+      "errors": 5,
+      "error_rate": 3.012,
+      "p95_latency_ms": 193.97,
+      "avg_latency_ms": 93.8
+    },
+    {
+      "timestamp": "2026-11-25T00:10:00Z",
+      "requests": 175,
+      "errors": 5,
+      "error_rate": 2.857,
+      "p95_latency_ms": 208.59,
+      "avg_latency_ms": 101.33
+    },
+    {
+      "timestamp": "2026-11-25T00:11:00Z",
+      "requests": 181,
+      "errors": 6,
+      "error_rate": 3.315,
+      "p95_latency_ms": 197.67,
+      "avg_latency_ms": 92.47
+    },
+    {
+      "timestamp": "2026-11-25T00:12:00Z",
+      "requests": 173,
+      "errors": 2,
+      "error_rate": 1.156,
+      "p95_latency_ms": 212.2,
+      "avg_latency_ms": 98.99
+    },
+    {
+      "timestamp": "2026-11-25T00:13:00Z",
+      "requests": 171,
+      "errors": 5,
+      "error_rate": 2.924,
+      "p95_latency_ms": 229.03,
+      "avg_latency_ms": 104.78
+    },
+    {
+      "timestamp": "2026-11-25T00:14:00Z",
+      "requests": 177,
+      "errors": 5,
+      "error_rate": 2.825,
+      "p95_latency_ms": 205.6,
+      "avg_latency_ms": 95.58
+    },
+    {
+      "timestamp": "2026-11-25T00:15:00Z",
+      "requests": 171,
+      "errors": 3,
+      "error_rate": 1.754,
+      "p95_latency_ms": 214.24,
+      "avg_latency_ms": 100.4
+    },
+    {
+      "timestamp": "2026-11-25T00:16:00Z",
+      "requests": 181,
+      "errors": 2,
+      "error_rate": 1.105,
+      "p95_latency_ms": 215.73,
+      "avg_latency_ms": 98.02
+    },
+    {
+      "timestamp": "2026-11-25T00:17:00Z",
+      "requests": 175,
+      "errors": 3,
+      "error_rate": 1.714,
+      "p95_latency_ms": 237.5,
+      "avg_latency_ms": 101.8
+    },
+    {
+      "timestamp": "2026-11-25T00:18:00Z",
+      "requests": 169,
+      "errors": 5,
+      "error_rate": 2.959,
+      "p95_latency_ms": 209.51,
+      "avg_latency_ms": 93.59
+    },
+    {
+      "timestamp": "2026-11-25T00:19:00Z",
+      "requests": 179,
+      "errors": 3,
+      "error_rate": 1.676,
+      "p95_latency_ms": 209.79,
+      "avg_latency_ms": 93.33
+    },
+    {
+      "timestamp": "2026-11-25T00:20:00Z",
+      "requests": 174,
+      "errors": 3,
+      "error_rate": 1.724,
+      "p95_latency_ms": 261.77,
+      "avg_latency_ms": 108.28
+    },
+    {
+      "timestamp": "2026-11-25T00:21:00Z",
+      "requests": 176,
+      "errors": 6,
+      "error_rate": 3.409,
+      "p95_latency_ms": 183.88,
+      "avg_latency_ms": 92.09
+    },
+    {
+      "timestamp": "2026-11-25T00:22:00Z",
+      "requests": 192,
+      "errors": 3,
+      "error_rate": 1.562,
+      "p95_latency_ms": 213.83,
+      "avg_latency_ms": 94.74
+    },
+    {
+      "timestamp": "2026-11-25T00:23:00Z",
+      "requests": 179,
+      "errors": 4,
+      "error_rate": 2.235,
+      "p95_latency_ms": 181.59,
+      "avg_latency_ms": 91.09
+    },
+    {
+      "timestamp": "2026-11-25T00:24:00Z",
+      "requests": 178,
+      "errors": 6,
+      "error_rate": 3.371,
+      "p95_latency_ms": 227.89,
+      "avg_latency_ms": 100.08
+    },
+    {
+      "timestamp": "2026-11-25T00:25:00Z",
+      "requests": 190,
+      "errors": 5,
+      "error_rate": 2.632,
+      "p95_latency_ms": 212.73,
+      "avg_latency_ms": 98.46
+    },
+    {
+      "timestamp": "2026-11-25T00:26:00Z",
+      "requests": 181,
+      "errors": 3,
+      "error_rate": 1.657,
+      "p95_latency_ms": 218.22,
+      "avg_latency_ms": 97.44
+    },
+    {
+      "timestamp": "2026-11-25T00:27:00Z",
+      "requests": 188,
+      "errors": 6,
+      "error_rate": 3.191,
+      "p95_latency_ms": 219.16,
+      "avg_latency_ms": 96.45
+    },
+    {
+      "timestamp": "2026-11-25T00:28:00Z",
+      "requests": 186,
+      "errors": 4,
+      "error_rate": 2.151,
+      "p95_latency_ms": 228.99,
+      "avg_latency_ms": 100.85
+    },
+    {
+      "timestamp": "2026-11-25T00:29:00Z",
+      "requests": 174,
+      "errors": 2,
+      "error_rate": 1.149,
+      "p95_latency_ms": 200.75,
+      "avg_latency_ms": 94.76
+    },
+    {
+      "timestamp": "2026-11-25T00:30:00Z",
+      "requests": 188,
+      "errors": 2,
+      "error_rate": 1.064,
+      "p95_latency_ms": 212.69,
+      "avg_latency_ms": 94.21
+    },
+    {
+      "timestamp": "2026-11-25T00:31:00Z",
+      "requests": 183,
+      "errors": 2,
+      "error_rate": 1.093,
+      "p95_latency_ms": 240.28,
+      "avg_latency_ms": 100.22
+    },
+    {
+      "timestamp": "2026-11-25T00:32:00Z",
+      "requests": 182,
+      "errors": 3,
+      "error_rate": 1.648,
+      "p95_latency_ms": 209.73,
+      "avg_latency_ms": 100.29
+    },
+    {
+      "timestamp": "2026-11-25T00:33:00Z",
+      "requests": 189,
+      "errors": 1,
+      "error_rate": 0.529,
+      "p95_latency_ms": 190.29,
+      "avg_latency_ms": 91.77
+    },
+    {
+      "timestamp": "2026-11-25T00:34:00Z",
+      "requests": 189,
+      "errors": 4,
+      "error_rate": 2.116,
+      "p95_latency_ms": 196.25,
+      "avg_latency_ms": 91.72
+    },
+    {
+      "timestamp": "2026-11-25T00:35:00Z",
+      "requests": 196,
+      "errors": 4,
+      "error_rate": 2.041,
+      "p95_latency_ms": 221.6,
+      "avg_latency_ms": 105.04
+    },
+    {
+      "timestamp": "2026-11-25T00:36:00Z",
+      "requests": 183,
+      "errors": 3,
+      "error_rate": 1.639,
+      "p95_latency_ms": 185.11,
+      "avg_latency_ms": 94.53
+    },
+    {
+      "timestamp": "2026-11-25T00:37:00Z",
+      "requests": 184,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 186.08,
+      "avg_latency_ms": 92.66
+    },
+    {
+      "timestamp": "2026-11-25T00:38:00Z",
+      "requests": 190,
+      "errors": 6,
+      "error_rate": 3.158,
+      "p95_latency_ms": 203.49,
+      "avg_latency_ms": 94.43
+    },
+    {
+      "timestamp": "2026-11-25T00:39:00Z",
+      "requests": 206,
+      "errors": 5,
+      "error_rate": 2.427,
+      "p95_latency_ms": 216.96,
+      "avg_latency_ms": 95.2
+    },
+    {
+      "timestamp": "2026-11-25T00:40:00Z",
+      "requests": 197,
+      "errors": 2,
+      "error_rate": 1.015,
+      "p95_latency_ms": 199.13,
+      "avg_latency_ms": 94.13
+    },
+    {
+      "timestamp": "2026-11-25T00:41:00Z",
+      "requests": 200,
+      "errors": 3,
+      "error_rate": 1.5,
+      "p95_latency_ms": 199.92,
+      "avg_latency_ms": 98.79
+    },
+    {
+      "timestamp": "2026-11-25T00:42:00Z",
+      "requests": 198,
+      "errors": 5,
+      "error_rate": 2.525,
+      "p95_latency_ms": 206.53,
+      "avg_latency_ms": 93.9
+    },
+    {
+      "timestamp": "2026-11-25T00:43:00Z",
+      "requests": 196,
+      "errors": 7,
+      "error_rate": 3.571,
+      "p95_latency_ms": 208.33,
+      "avg_latency_ms": 95.93
+    },
+    {
+      "timestamp": "2026-11-25T00:44:00Z",
+      "requests": 203,
+      "errors": 3,
+      "error_rate": 1.478,
+      "p95_latency_ms": 187.92,
+      "avg_latency_ms": 92.21
+    },
+    {
+      "timestamp": "2026-11-25T00:45:00Z",
+      "requests": 197,
+      "errors": 4,
+      "error_rate": 2.03,
+      "p95_latency_ms": 194.04,
+      "avg_latency_ms": 93.44
+    },
+    {
+      "timestamp": "2026-11-25T00:46:00Z",
+      "requests": 204,
+      "errors": 7,
+      "error_rate": 3.431,
+      "p95_latency_ms": 226.43,
+      "avg_latency_ms": 93.74
+    },
+    {
+      "timestamp": "2026-11-25T00:47:00Z",
+      "requests": 194,
+      "errors": 2,
+      "error_rate": 1.031,
+      "p95_latency_ms": 195.72,
+      "avg_latency_ms": 97.24
+    },
+    {
+      "timestamp": "2026-11-25T00:48:00Z",
+      "requests": 200,
+      "errors": 1,
+      "error_rate": 0.5,
+      "p95_latency_ms": 201.49,
+      "avg_latency_ms": 95.72
+    },
+    {
+      "timestamp": "2026-11-25T00:49:00Z",
+      "requests": 201,
+      "errors": 3,
+      "error_rate": 1.493,
+      "p95_latency_ms": 221.36,
+      "avg_latency_ms": 101.4
+    },
+    {
+      "timestamp": "2026-11-25T00:50:00Z",
+      "requests": 198,
+      "errors": 4,
+      "error_rate": 2.02,
+      "p95_latency_ms": 205.41,
+      "avg_latency_ms": 93.96
+    },
+    {
+      "timestamp": "2026-11-25T00:51:00Z",
+      "requests": 193,
+      "errors": 4,
+      "error_rate": 2.073,
+      "p95_latency_ms": 189.56,
+      "avg_latency_ms": 92.22
+    },
+    {
+      "timestamp": "2026-11-25T00:52:00Z",
+      "requests": 209,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 214.08,
+      "avg_latency_ms": 97.54
+    },
+    {
+      "timestamp": "2026-11-25T00:53:00Z",
+      "requests": 200,
+      "errors": 3,
+      "error_rate": 1.5,
+      "p95_latency_ms": 219.31,
+      "avg_latency_ms": 98.8
+    },
+    {
+      "timestamp": "2026-11-25T00:54:00Z",
+      "requests": 196,
+      "errors": 6,
+      "error_rate": 3.061,
+      "p95_latency_ms": 232.53,
+      "avg_latency_ms": 105.49
+    },
+    {
+      "timestamp": "2026-11-25T00:55:00Z",
+      "requests": 203,
+      "errors": 2,
+      "error_rate": 0.985,
+      "p95_latency_ms": 211.12,
+      "avg_latency_ms": 93.3
+    },
+    {
+      "timestamp": "2026-11-25T00:56:00Z",
+      "requests": 209,
+      "errors": 2,
+      "error_rate": 0.957,
+      "p95_latency_ms": 220.31,
+      "avg_latency_ms": 101.98
+    },
+    {
+      "timestamp": "2026-11-25T00:57:00Z",
+      "requests": 202,
+      "errors": 1,
+      "error_rate": 0.495,
+      "p95_latency_ms": 194.56,
+      "avg_latency_ms": 96.23
+    },
+    {
+      "timestamp": "2026-11-25T00:58:00Z",
+      "requests": 218,
+      "errors": 3,
+      "error_rate": 1.376,
+      "p95_latency_ms": 214.56,
+      "avg_latency_ms": 101.67
+    },
+    {
+      "timestamp": "2026-11-25T00:59:00Z",
+      "requests": 204,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 197.66,
+      "avg_latency_ms": 93.85
+    },
+    {
+      "timestamp": "2026-11-25T01:00:00Z",
+      "requests": 170,
+      "errors": 3,
+      "error_rate": 1.765,
+      "p95_latency_ms": 250.66,
+      "avg_latency_ms": 97.01
+    },
+    {
+      "timestamp": "2026-11-25T01:01:00Z",
+      "requests": 166,
+      "errors": 1,
+      "error_rate": 0.602,
+      "p95_latency_ms": 201.4,
+      "avg_latency_ms": 97.25
+    },
+    {
+      "timestamp": "2026-11-25T01:02:00Z",
+      "requests": 163,
+      "errors": 5,
+      "error_rate": 3.067,
+      "p95_latency_ms": 240.12,
+      "avg_latency_ms": 107.1
+    },
+    {
+      "timestamp": "2026-11-25T01:03:00Z",
+      "requests": 164,
+      "errors": 2,
+      "error_rate": 1.22,
+      "p95_latency_ms": 192.4,
+      "avg_latency_ms": 93.56
+    },
+    {
+      "timestamp": "2026-11-25T01:04:00Z",
+      "requests": 171,
+      "errors": 2,
+      "error_rate": 1.17,
+      "p95_latency_ms": 216.42,
+      "avg_latency_ms": 96.99
+    },
+    {
+      "timestamp": "2026-11-25T01:05:00Z",
+      "requests": 164,
+      "errors": 3,
+      "error_rate": 1.829,
+      "p95_latency_ms": 227.97,
+      "avg_latency_ms": 96.93
+    },
+    {
+      "timestamp": "2026-11-25T01:06:00Z",
+      "requests": 170,
+      "errors": 1,
+      "error_rate": 0.588,
+      "p95_latency_ms": 188.12,
+      "avg_latency_ms": 87.86
+    },
+    {
+      "timestamp": "2026-11-25T01:07:00Z",
+      "requests": 171,
+      "errors": 1,
+      "error_rate": 0.585,
+      "p95_latency_ms": 180.64,
+      "avg_latency_ms": 96.53
+    },
+    {
+      "timestamp": "2026-11-25T01:08:00Z",
+      "requests": 172,
+      "errors": 4,
+      "error_rate": 2.326,
+      "p95_latency_ms": 194.76,
+      "avg_latency_ms": 97.39
+    },
+    {
+      "timestamp": "2026-11-25T01:09:00Z",
+      "requests": 177,
+      "errors": 6,
+      "error_rate": 3.39,
+      "p95_latency_ms": 209.89,
+      "avg_latency_ms": 104.24
+    },
+    {
+      "timestamp": "2026-11-25T01:10:00Z",
+      "requests": 161,
+      "errors": 5,
+      "error_rate": 3.106,
+      "p95_latency_ms": 183.69,
+      "avg_latency_ms": 90.51
+    },
+    {
+      "timestamp": "2026-11-25T01:11:00Z",
+      "requests": 175,
+      "errors": 1,
+      "error_rate": 0.571,
+      "p95_latency_ms": 197.07,
+      "avg_latency_ms": 96.41
+    },
+    {
+      "timestamp": "2026-11-25T01:12:00Z",
+      "requests": 175,
+      "errors": 1,
+      "error_rate": 0.571,
+      "p95_latency_ms": 207.11,
+      "avg_latency_ms": 102.19
+    },
+    {
+      "timestamp": "2026-11-25T01:13:00Z",
+      "requests": 169,
+      "errors": 3,
+      "error_rate": 1.775,
+      "p95_latency_ms": 227.41,
+      "avg_latency_ms": 96.92
+    },
+    {
+      "timestamp": "2026-11-25T01:14:00Z",
+      "requests": 177,
+      "errors": 3,
+      "error_rate": 1.695,
+      "p95_latency_ms": 231.01,
+      "avg_latency_ms": 99.35
+    },
+    {
+      "timestamp": "2026-11-25T01:15:00Z",
+      "requests": 169,
+      "errors": 2,
+      "error_rate": 1.183,
+      "p95_latency_ms": 209.95,
+      "avg_latency_ms": 97.49
+    },
+    {
+      "timestamp": "2026-11-25T01:16:00Z",
+      "requests": 174,
+      "errors": 2,
+      "error_rate": 1.149,
+      "p95_latency_ms": 184.09,
+      "avg_latency_ms": 92.61
+    },
+    {
+      "timestamp": "2026-11-25T01:17:00Z",
+      "requests": 182,
+      "errors": 5,
+      "error_rate": 2.747,
+      "p95_latency_ms": 192.37,
+      "avg_latency_ms": 98.61
+    },
+    {
+      "timestamp": "2026-11-25T01:18:00Z",
+      "requests": 183,
+      "errors": 5,
+      "error_rate": 2.732,
+      "p95_latency_ms": 225.94,
+      "avg_latency_ms": 92.48
+    },
+    {
+      "timestamp": "2026-11-25T01:19:00Z",
+      "requests": 176,
+      "errors": 1,
+      "error_rate": 0.568,
+      "p95_latency_ms": 215.73,
+      "avg_latency_ms": 100.3
+    },
+    {
+      "timestamp": "2026-11-25T01:20:00Z",
+      "requests": 174,
+      "errors": 4,
+      "error_rate": 2.299,
+      "p95_latency_ms": 227.94,
+      "avg_latency_ms": 99.39
+    },
+    {
+      "timestamp": "2026-11-25T01:21:00Z",
+      "requests": 177,
+      "errors": 2,
+      "error_rate": 1.13,
+      "p95_latency_ms": 215.92,
+      "avg_latency_ms": 101.15
+    },
+    {
+      "timestamp": "2026-11-25T01:22:00Z",
+      "requests": 183,
+      "errors": 2,
+      "error_rate": 1.093,
+      "p95_latency_ms": 212.64,
+      "avg_latency_ms": 95.6
+    },
+    {
+      "timestamp": "2026-11-25T01:23:00Z",
+      "requests": 189,
+      "errors": 1,
+      "error_rate": 0.529,
+      "p95_latency_ms": 238.72,
+      "avg_latency_ms": 95.94
+    },
+    {
+      "timestamp": "2026-11-25T01:24:00Z",
+      "requests": 190,
+      "errors": 5,
+      "error_rate": 2.632,
+      "p95_latency_ms": 210.41,
+      "avg_latency_ms": 95.35
+    },
+    {
+      "timestamp": "2026-11-25T01:25:00Z",
+      "requests": 182,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 227.44,
+      "avg_latency_ms": 98.77
+    },
+    {
+      "timestamp": "2026-11-25T01:26:00Z",
+      "requests": 182,
+      "errors": 6,
+      "error_rate": 3.297,
+      "p95_latency_ms": 235.6,
+      "avg_latency_ms": 106.17
+    },
+    {
+      "timestamp": "2026-11-25T01:27:00Z",
+      "requests": 185,
+      "errors": 3,
+      "error_rate": 1.622,
+      "p95_latency_ms": 203.06,
+      "avg_latency_ms": 93.23
+    },
+    {
+      "timestamp": "2026-11-25T01:28:00Z",
+      "requests": 189,
+      "errors": 4,
+      "error_rate": 2.116,
+      "p95_latency_ms": 199.38,
+      "avg_latency_ms": 94.6
+    },
+    {
+      "timestamp": "2026-11-25T01:29:00Z",
+      "requests": 188,
+      "errors": 3,
+      "error_rate": 1.596,
+      "p95_latency_ms": 227.48,
+      "avg_latency_ms": 96.3
+    },
+    {
+      "timestamp": "2026-11-25T01:30:00Z",
+      "requests": 188,
+      "errors": 2,
+      "error_rate": 1.064,
+      "p95_latency_ms": 218.86,
+      "avg_latency_ms": 97.95
+    },
+    {
+      "timestamp": "2026-11-25T01:31:00Z",
+      "requests": 195,
+      "errors": 4,
+      "error_rate": 2.051,
+      "p95_latency_ms": 219.75,
+      "avg_latency_ms": 96.89
+    },
+    {
+      "timestamp": "2026-11-25T01:32:00Z",
+      "requests": 196,
+      "errors": 1,
+      "error_rate": 0.51,
+      "p95_latency_ms": 206.12,
+      "avg_latency_ms": 95.44
+    },
+    {
+      "timestamp": "2026-11-25T01:33:00Z",
+      "requests": 196,
+      "errors": 1,
+      "error_rate": 0.51,
+      "p95_latency_ms": 250.52,
+      "avg_latency_ms": 98.04
+    },
+    {
+      "timestamp": "2026-11-25T01:34:00Z",
+      "requests": 203,
+      "errors": 3,
+      "error_rate": 1.478,
+      "p95_latency_ms": 237.74,
+      "avg_latency_ms": 98.95
+    },
+    {
+      "timestamp": "2026-11-25T01:35:00Z",
+      "requests": 197,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 232.66,
+      "avg_latency_ms": 99.95
+    },
+    {
+      "timestamp": "2026-11-25T01:36:00Z",
+      "requests": 182,
+      "errors": 1,
+      "error_rate": 0.549,
+      "p95_latency_ms": 208.08,
+      "avg_latency_ms": 95.3
+    },
+    {
+      "timestamp": "2026-11-25T01:37:00Z",
+      "requests": 200,
+      "errors": 3,
+      "error_rate": 1.5,
+      "p95_latency_ms": 184.17,
+      "avg_latency_ms": 88.91
+    },
+    {
+      "timestamp": "2026-11-25T01:38:00Z",
+      "requests": 183,
+      "errors": 2,
+      "error_rate": 1.093,
+      "p95_latency_ms": 180.38,
+      "avg_latency_ms": 90.59
+    },
+    {
+      "timestamp": "2026-11-25T01:39:00Z",
+      "requests": 197,
+      "errors": 2,
+      "error_rate": 1.015,
+      "p95_latency_ms": 227.37,
+      "avg_latency_ms": 98.05
+    },
+    {
+      "timestamp": "2026-11-25T01:40:00Z",
+      "requests": 189,
+      "errors": 2,
+      "error_rate": 1.058,
+      "p95_latency_ms": 229.86,
+      "avg_latency_ms": 102.37
+    },
+    {
+      "timestamp": "2026-11-25T01:41:00Z",
+      "requests": 203,
+      "errors": 2,
+      "error_rate": 0.985,
+      "p95_latency_ms": 194.68,
+      "avg_latency_ms": 92.94
+    },
+    {
+      "timestamp": "2026-11-25T01:42:00Z",
+      "requests": 190,
+      "errors": 5,
+      "error_rate": 2.632,
+      "p95_latency_ms": 202.31,
+      "avg_latency_ms": 96.61
+    },
+    {
+      "timestamp": "2026-11-25T01:43:00Z",
+      "requests": 199,
+      "errors": 3,
+      "error_rate": 1.508,
+      "p95_latency_ms": 189.34,
+      "avg_latency_ms": 91.35
+    },
+    {
+      "timestamp": "2026-11-25T01:44:00Z",
+      "requests": 196,
+      "errors": 4,
+      "error_rate": 2.041,
+      "p95_latency_ms": 202.12,
+      "avg_latency_ms": 99.07
+    },
+    {
+      "timestamp": "2026-11-25T01:45:00Z",
+      "requests": 195,
+      "errors": 4,
+      "error_rate": 2.051,
+      "p95_latency_ms": 223.9,
+      "avg_latency_ms": 91.9
+    },
+    {
+      "timestamp": "2026-11-25T01:46:00Z",
+      "requests": 210,
+      "errors": 1,
+      "error_rate": 0.476,
+      "p95_latency_ms": 230.41,
+      "avg_latency_ms": 98.25
+    },
+    {
+      "timestamp": "2026-11-25T01:47:00Z",
+      "requests": 201,
+      "errors": 4,
+      "error_rate": 1.99,
+      "p95_latency_ms": 219.81,
+      "avg_latency_ms": 98.33
+    },
+    {
+      "timestamp": "2026-11-25T01:48:00Z",
+      "requests": 204,
+      "errors": 3,
+      "error_rate": 1.471,
+      "p95_latency_ms": 189.36,
+      "avg_latency_ms": 92.6
+    },
+    {
+      "timestamp": "2026-11-25T01:49:00Z",
+      "requests": 201,
+      "errors": 5,
+      "error_rate": 2.488,
+      "p95_latency_ms": 204.79,
+      "avg_latency_ms": 93.76
+    },
+    {
+      "timestamp": "2026-11-25T01:50:00Z",
+      "requests": 194,
+      "errors": 4,
+      "error_rate": 2.062,
+      "p95_latency_ms": 205.57,
+      "avg_latency_ms": 100.28
+    },
+    {
+      "timestamp": "2026-11-25T01:51:00Z",
+      "requests": 209,
+      "errors": 1,
+      "error_rate": 0.478,
+      "p95_latency_ms": 197.2,
+      "avg_latency_ms": 96.43
+    },
+    {
+      "timestamp": "2026-11-25T01:52:00Z",
+      "requests": 206,
+      "errors": 4,
+      "error_rate": 1.942,
+      "p95_latency_ms": 223.7,
+      "avg_latency_ms": 99.54
+    },
+    {
+      "timestamp": "2026-11-25T01:53:00Z",
+      "requests": 217,
+      "errors": 1,
+      "error_rate": 0.461,
+      "p95_latency_ms": 194.16,
+      "avg_latency_ms": 92.7
+    },
+    {
+      "timestamp": "2026-11-25T01:54:00Z",
+      "requests": 208,
+      "errors": 3,
+      "error_rate": 1.442,
+      "p95_latency_ms": 213.66,
+      "avg_latency_ms": 103.37
+    },
+    {
+      "timestamp": "2026-11-25T01:55:00Z",
+      "requests": 222,
+      "errors": 4,
+      "error_rate": 1.802,
+      "p95_latency_ms": 186.2,
+      "avg_latency_ms": 93.31
+    },
+    {
+      "timestamp": "2026-11-25T01:56:00Z",
+      "requests": 203,
+      "errors": 2,
+      "error_rate": 0.985,
+      "p95_latency_ms": 205.86,
+      "avg_latency_ms": 95.52
+    },
+    {
+      "timestamp": "2026-11-25T01:57:00Z",
+      "requests": 197,
+      "errors": 3,
+      "error_rate": 1.523,
+      "p95_latency_ms": 212.76,
+      "avg_latency_ms": 101.68
+    },
+    {
+      "timestamp": "2026-11-25T01:58:00Z",
+      "requests": 210,
+      "errors": 5,
+      "error_rate": 2.381,
+      "p95_latency_ms": 214.59,
+      "avg_latency_ms": 98.32
+    },
+    {
+      "timestamp": "2026-11-25T01:59:00Z",
+      "requests": 206,
+      "errors": 4,
+      "error_rate": 1.942,
+      "p95_latency_ms": 194.85,
+      "avg_latency_ms": 96.46
+    },
+    {
+      "timestamp": "2026-11-25T02:00:00Z",
+      "requests": 164,
+      "errors": 1,
+      "error_rate": 0.61,
+      "p95_latency_ms": 199.68,
+      "avg_latency_ms": 90.66
+    },
+    {
+      "timestamp": "2026-11-25T02:01:00Z",
+      "requests": 173,
+      "errors": 4,
+      "error_rate": 2.312,
+      "p95_latency_ms": 201.72,
+      "avg_latency_ms": 96.21
+    },
+    {
+      "timestamp": "2026-11-25T02:02:00Z",
+      "requests": 163,
+      "errors": 1,
+      "error_rate": 0.613,
+      "p95_latency_ms": 240.99,
+      "avg_latency_ms": 100.99
+    },
+    {
+      "timestamp": "2026-11-25T02:03:00Z",
+      "requests": 159,
+      "errors": 2,
+      "error_rate": 1.258,
+      "p95_latency_ms": 181.0,
+      "avg_latency_ms": 89.47
+    },
+    {
+      "timestamp": "2026-11-25T02:04:00Z",
+      "requests": 166,
+      "errors": 2,
+      "error_rate": 1.205,
+      "p95_latency_ms": 211.68,
+      "avg_latency_ms": 100.84
+    },
+    {
+      "timestamp": "2026-11-25T02:05:00Z",
+      "requests": 167,
+      "errors": 1,
+      "error_rate": 0.599,
+      "p95_latency_ms": 182.32,
+      "avg_latency_ms": 93.37
+    },
+    {
+      "timestamp": "2026-11-25T02:06:00Z",
+      "requests": 159,
+      "errors": 3,
+      "error_rate": 1.887,
+      "p95_latency_ms": 201.43,
+      "avg_latency_ms": 95.03
+    },
+    {
+      "timestamp": "2026-11-25T02:07:00Z",
+      "requests": 173,
+      "errors": 1,
+      "error_rate": 0.578,
+      "p95_latency_ms": 211.11,
+      "avg_latency_ms": 94.71
+    },
+    {
+      "timestamp": "2026-11-25T02:08:00Z",
+      "requests": 162,
+      "errors": 2,
+      "error_rate": 1.235,
+      "p95_latency_ms": 218.42,
+      "avg_latency_ms": 99.55
+    },
+    {
+      "timestamp": "2026-11-25T02:09:00Z",
+      "requests": 168,
+      "errors": 6,
+      "error_rate": 3.571,
+      "p95_latency_ms": 214.42,
+      "avg_latency_ms": 97.38
+    },
+    {
+      "timestamp": "2026-11-25T02:10:00Z",
+      "requests": 175,
+      "errors": 3,
+      "error_rate": 1.714,
+      "p95_latency_ms": 211.17,
+      "avg_latency_ms": 101.84
+    },
+    {
+      "timestamp": "2026-11-25T02:11:00Z",
+      "requests": 173,
+      "errors": 5,
+      "error_rate": 2.89,
+      "p95_latency_ms": 197.0,
+      "avg_latency_ms": 96.45
+    },
+    {
+      "timestamp": "2026-11-25T02:12:00Z",
+      "requests": 176,
+      "errors": 1,
+      "error_rate": 0.568,
+      "p95_latency_ms": 172.38,
+      "avg_latency_ms": 92.97
+    },
+    {
+      "timestamp": "2026-11-25T02:13:00Z",
+      "requests": 170,
+      "errors": 1,
+      "error_rate": 0.588,
+      "p95_latency_ms": 204.34,
+      "avg_latency_ms": 94.69
+    },
+    {
+      "timestamp": "2026-11-25T02:14:00Z",
+      "requests": 175,
+      "errors": 3,
+      "error_rate": 1.714,
+      "p95_latency_ms": 186.13,
+      "avg_latency_ms": 89.91
+    },
+    {
+      "timestamp": "2026-11-25T02:15:00Z",
+      "requests": 178,
+      "errors": 2,
+      "error_rate": 1.124,
+      "p95_latency_ms": 192.93,
+      "avg_latency_ms": 90.07
+    },
+    {
+      "timestamp": "2026-11-25T02:16:00Z",
+      "requests": 183,
+      "errors": 2,
+      "error_rate": 1.093,
+      "p95_latency_ms": 187.44,
+      "avg_latency_ms": 91.15
+    },
+    {
+      "timestamp": "2026-11-25T02:17:00Z",
+      "requests": 181,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 182.71,
+      "avg_latency_ms": 93.38
+    },
+    {
+      "timestamp": "2026-11-25T02:18:00Z",
+      "requests": 182,
+      "errors": 4,
+      "error_rate": 2.198,
+      "p95_latency_ms": 173.18,
+      "avg_latency_ms": 89.96
+    },
+    {
+      "timestamp": "2026-11-25T02:19:00Z",
+      "requests": 189,
+      "errors": 3,
+      "error_rate": 1.587,
+      "p95_latency_ms": 200.35,
+      "avg_latency_ms": 95.59
+    },
+    {
+      "timestamp": "2026-11-25T02:20:00Z",
+      "requests": 193,
+      "errors": 6,
+      "error_rate": 3.109,
+      "p95_latency_ms": 188.84,
+      "avg_latency_ms": 90.26
+    },
+    {
+      "timestamp": "2026-11-25T02:21:00Z",
+      "requests": 178,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 192.06,
+      "avg_latency_ms": 97.01
+    },
+    {
+      "timestamp": "2026-11-25T02:22:00Z",
+      "requests": 180,
+      "errors": 2,
+      "error_rate": 1.111,
+      "p95_latency_ms": 213.18,
+      "avg_latency_ms": 99.33
+    },
+    {
+      "timestamp": "2026-11-25T02:23:00Z",
+      "requests": 180,
+      "errors": 1,
+      "error_rate": 0.556,
+      "p95_latency_ms": 210.52,
+      "avg_latency_ms": 97.15
+    },
+    {
+      "timestamp": "2026-11-25T02:24:00Z",
+      "requests": 180,
+      "errors": 2,
+      "error_rate": 1.111,
+      "p95_latency_ms": 213.39,
+      "avg_latency_ms": 96.64
+    },
+    {
+      "timestamp": "2026-11-25T02:25:00Z",
+      "requests": 188,
+      "errors": 3,
+      "error_rate": 1.596,
+      "p95_latency_ms": 191.04,
+      "avg_latency_ms": 92.3
+    },
+    {
+      "timestamp": "2026-11-25T02:26:00Z",
+      "requests": 188,
+      "errors": 4,
+      "error_rate": 2.128,
+      "p95_latency_ms": 207.48,
+      "avg_latency_ms": 96.89
+    },
+    {
+      "timestamp": "2026-11-25T02:27:00Z",
+      "requests": 179,
+      "errors": 2,
+      "error_rate": 1.117,
+      "p95_latency_ms": 222.16,
+      "avg_latency_ms": 103.8
+    },
+    {
+      "timestamp": "2026-11-25T02:28:00Z",
+      "requests": 181,
+      "errors": 3,
+      "error_rate": 1.657,
+      "p95_latency_ms": 179.19,
+      "avg_latency_ms": 91.43
+    },
+    {
+      "timestamp": "2026-11-25T02:29:00Z",
+      "requests": 184,
+      "errors": 1,
+      "error_rate": 0.543,
+      "p95_latency_ms": 205.98,
+      "avg_latency_ms": 99.78
+    },
+    {
+      "timestamp": "2026-11-25T02:30:00Z",
+      "requests": 182,
+      "errors": 5,
+      "error_rate": 2.747,
+      "p95_latency_ms": 214.6,
+      "avg_latency_ms": 95.54
+    },
+    {
+      "timestamp": "2026-11-25T02:31:00Z",
+      "requests": 179,
+      "errors": 4,
+      "error_rate": 2.235,
+      "p95_latency_ms": 231.22,
+      "avg_latency_ms": 96.58
+    },
+    {
+      "timestamp": "2026-11-25T02:32:00Z",
+      "requests": 193,
+      "errors": 5,
+      "error_rate": 2.591,
+      "p95_latency_ms": 193.13,
+      "avg_latency_ms": 97.68
+    },
+    {
+      "timestamp": "2026-11-25T02:33:00Z",
+      "requests": 192,
+      "errors": 1,
+      "error_rate": 0.521,
+      "p95_latency_ms": 210.39,
+      "avg_latency_ms": 99.01
+    },
+    {
+      "timestamp": "2026-11-25T02:34:00Z",
+      "requests": 180,
+      "errors": 5,
+      "error_rate": 2.778,
+      "p95_latency_ms": 225.68,
+      "avg_latency_ms": 103.1
+    },
+    {
+      "timestamp": "2026-11-25T02:35:00Z",
+      "requests": 190,
+      "errors": 1,
+      "error_rate": 0.526,
+      "p95_latency_ms": 220.52,
+      "avg_latency_ms": 103.23
+    },
+    {
+      "timestamp": "2026-11-25T02:36:00Z",
+      "requests": 184,
+      "errors": 1,
+      "error_rate": 0.543,
+      "p95_latency_ms": 219.2,
+      "avg_latency_ms": 97.79
+    },
+    {
+      "timestamp": "2026-11-25T02:37:00Z",
+      "requests": 188,
+      "errors": 3,
+      "error_rate": 1.596,
+      "p95_latency_ms": 207.54,
+      "avg_latency_ms": 97.14
+    },
+    {
+      "timestamp": "2026-11-25T02:38:00Z",
+      "requests": 203,
+      "errors": 4,
+      "error_rate": 1.97,
+      "p95_latency_ms": 212.87,
+      "avg_latency_ms": 98.01
+    },
+    {
+      "timestamp": "2026-11-25T02:39:00Z",
+      "requests": 194,
+      "errors": 1,
+      "error_rate": 0.515,
+      "p95_latency_ms": 229.13,
+      "avg_latency_ms": 102.31
+    },
+    {
+      "timestamp": "2026-11-25T02:40:00Z",
+      "requests": 196,
+      "errors": 7,
+      "error_rate": 3.571,
+      "p95_latency_ms": 200.13,
+      "avg_latency_ms": 97.21
+    },
+    {
+      "timestamp": "2026-11-25T02:41:00Z",
+      "requests": 202,
+      "errors": 3,
+      "error_rate": 1.485,
+      "p95_latency_ms": 196.36,
+      "avg_latency_ms": 95.58
+    },
+    {
+      "timestamp": "2026-11-25T02:42:00Z",
+      "requests": 205,
+      "errors": 6,
+      "error_rate": 2.927,
+      "p95_latency_ms": 212.63,
+      "avg_latency_ms": 96.62
+    },
+    {
+      "timestamp": "2026-11-25T02:43:00Z",
+      "requests": 187,
+      "errors": 5,
+      "error_rate": 2.674,
+      "p95_latency_ms": 209.68,
+      "avg_latency_ms": 97.62
+    },
+    {
+      "timestamp": "2026-11-25T02:44:00Z",
+      "requests": 215,
+      "errors": 9,
+      "error_rate": 4.186,
+      "p95_latency_ms": 198.03,
+      "avg_latency_ms": 97.33
+    },
+    {
+      "timestamp": "2026-11-25T02:45:00Z",
+      "requests": 202,
+      "errors": 4,
+      "error_rate": 1.98,
+      "p95_latency_ms": 225.03,
+      "avg_latency_ms": 99.98
+    },
+    {
+      "timestamp": "2026-11-25T02:46:00Z",
+      "requests": 194,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 217.5,
+      "avg_latency_ms": 99.49
+    },
+    {
+      "timestamp": "2026-11-25T02:47:00Z",
+      "requests": 197,
+      "errors": 2,
+      "error_rate": 1.015,
+      "p95_latency_ms": 224.95,
+      "avg_latency_ms": 100.43
+    },
+    {
+      "timestamp": "2026-11-25T02:48:00Z",
+      "requests": 197,
+      "errors": 4,
+      "error_rate": 2.03,
+      "p95_latency_ms": 204.73,
+      "avg_latency_ms": 95.2
+    },
+    {
+      "timestamp": "2026-11-25T02:49:00Z",
+      "requests": 199,
+      "errors": 4,
+      "error_rate": 2.01,
+      "p95_latency_ms": 191.67,
+      "avg_latency_ms": 98.29
+    },
+    {
+      "timestamp": "2026-11-25T02:50:00Z",
+      "requests": 197,
+      "errors": 2,
+      "error_rate": 1.015,
+      "p95_latency_ms": 190.62,
+      "avg_latency_ms": 96.56
+    },
+    {
+      "timestamp": "2026-11-25T02:51:00Z",
+      "requests": 202,
+      "errors": 1,
+      "error_rate": 0.495,
+      "p95_latency_ms": 201.2,
+      "avg_latency_ms": 96.23
+    },
+    {
+      "timestamp": "2026-11-25T02:52:00Z",
+      "requests": 196,
+      "errors": 3,
+      "error_rate": 1.531,
+      "p95_latency_ms": 222.62,
+      "avg_latency_ms": 96.15
+    },
+    {
+      "timestamp": "2026-11-25T02:53:00Z",
+      "requests": 210,
+      "errors": 3,
+      "error_rate": 1.429,
+      "p95_latency_ms": 219.98,
+      "avg_latency_ms": 96.79
+    },
+    {
+      "timestamp": "2026-11-25T02:54:00Z",
+      "requests": 201,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 220.13,
+      "avg_latency_ms": 93.22
+    },
+    {
+      "timestamp": "2026-11-25T02:55:00Z",
+      "requests": 220,
+      "errors": 3,
+      "error_rate": 1.364,
+      "p95_latency_ms": 201.19,
+      "avg_latency_ms": 95.86
+    },
+    {
+      "timestamp": "2026-11-25T02:56:00Z",
+      "requests": 192,
+      "errors": 2,
+      "error_rate": 1.042,
+      "p95_latency_ms": 241.97,
+      "avg_latency_ms": 103.02
+    },
+    {
+      "timestamp": "2026-11-25T02:57:00Z",
+      "requests": 215,
+      "errors": 3,
+      "error_rate": 1.395,
+      "p95_latency_ms": 225.13,
+      "avg_latency_ms": 100.17
+    },
+    {
+      "timestamp": "2026-11-25T02:58:00Z",
+      "requests": 208,
+      "errors": 1,
+      "error_rate": 0.481,
+      "p95_latency_ms": 208.17,
+      "avg_latency_ms": 93.91
+    },
+    {
+      "timestamp": "2026-11-25T02:59:00Z",
+      "requests": 206,
+      "errors": 2,
+      "error_rate": 0.971,
+      "p95_latency_ms": 215.61,
+      "avg_latency_ms": 98.04
+    },
+    {
+      "timestamp": "2026-11-25T03:00:00Z",
+      "requests": 164,
+      "errors": 4,
+      "error_rate": 2.439,
+      "p95_latency_ms": 215.0,
+      "avg_latency_ms": 95.33
+    },
+    {
+      "timestamp": "2026-11-25T03:01:00Z",
+      "requests": 175,
+      "errors": 3,
+      "error_rate": 1.714,
+      "p95_latency_ms": 202.34,
+      "avg_latency_ms": 87.38
+    },
+    {
+      "timestamp": "2026-11-25T03:02:00Z",
+      "requests": 159,
+      "errors": 4,
+      "error_rate": 2.516,
+      "p95_latency_ms": 209.2,
+      "avg_latency_ms": 96.38
+    },
+    {
+      "timestamp": "2026-11-25T03:03:00Z",
+      "requests": 177,
+      "errors": 4,
+      "error_rate": 2.26,
+      "p95_latency_ms": 206.14,
+      "avg_latency_ms": 101.94
+    },
+    {
+      "timestamp": "2026-11-25T03:04:00Z",
+      "requests": 168,
+      "errors": 3,
+      "error_rate": 1.786,
+      "p95_latency_ms": 207.36,
+      "avg_latency_ms": 95.13
+    },
+    {
+      "timestamp": "2026-11-25T03:05:00Z",
+      "requests": 168,
+      "errors": 3,
+      "error_rate": 1.786,
+      "p95_latency_ms": 210.97,
+      "avg_latency_ms": 99.48
+    },
+    {
+      "timestamp": "2026-11-25T03:06:00Z",
+      "requests": 170,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 191.53,
+      "avg_latency_ms": 95.29
+    },
+    {
+      "timestamp": "2026-11-25T03:07:00Z",
+      "requests": 166,
+      "errors": 5,
+      "error_rate": 3.012,
+      "p95_latency_ms": 209.85,
+      "avg_latency_ms": 94.48
+    },
+    {
+      "timestamp": "2026-11-25T03:08:00Z",
+      "requests": 169,
+      "errors": 4,
+      "error_rate": 2.367,
+      "p95_latency_ms": 207.05,
+      "avg_latency_ms": 99.42
+    },
+    {
+      "timestamp": "2026-11-25T03:09:00Z",
+      "requests": 166,
+      "errors": 4,
+      "error_rate": 2.41,
+      "p95_latency_ms": 199.3,
+      "avg_latency_ms": 97.49
+    },
+    {
+      "timestamp": "2026-11-25T03:10:00Z",
+      "requests": 161,
+      "errors": 1,
+      "error_rate": 0.621,
+      "p95_latency_ms": 196.04,
+      "avg_latency_ms": 96.94
+    },
+    {
+      "timestamp": "2026-11-25T03:11:00Z",
+      "requests": 176,
+      "errors": 2,
+      "error_rate": 1.136,
+      "p95_latency_ms": 199.85,
+      "avg_latency_ms": 99.19
+    },
+    {
+      "timestamp": "2026-11-25T03:12:00Z",
+      "requests": 169,
+      "errors": 2,
+      "error_rate": 1.183,
+      "p95_latency_ms": 202.11,
+      "avg_latency_ms": 98.33
+    },
+    {
+      "timestamp": "2026-11-25T03:13:00Z",
+      "requests": 165,
+      "errors": 3,
+      "error_rate": 1.818,
+      "p95_latency_ms": 213.51,
+      "avg_latency_ms": 101.16
+    },
+    {
+      "timestamp": "2026-11-25T03:14:00Z",
+      "requests": 177,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 201.39,
+      "avg_latency_ms": 94.05
+    },
+    {
+      "timestamp": "2026-11-25T03:15:00Z",
+      "requests": 190,
+      "errors": 3,
+      "error_rate": 1.579,
+      "p95_latency_ms": 225.44,
+      "avg_latency_ms": 99.82
+    },
+    {
+      "timestamp": "2026-11-25T03:16:00Z",
+      "requests": 175,
+      "errors": 2,
+      "error_rate": 1.143,
+      "p95_latency_ms": 220.86,
+      "avg_latency_ms": 104.21
+    },
+    {
+      "timestamp": "2026-11-25T03:17:00Z",
+      "requests": 180,
+      "errors": 2,
+      "error_rate": 1.111,
+      "p95_latency_ms": 235.73,
+      "avg_latency_ms": 96.83
+    },
+    {
+      "timestamp": "2026-11-25T03:18:00Z",
+      "requests": 180,
+      "errors": 4,
+      "error_rate": 2.222,
+      "p95_latency_ms": 217.2,
+      "avg_latency_ms": 98.7
+    },
+    {
+      "timestamp": "2026-11-25T03:19:00Z",
+      "requests": 191,
+      "errors": 2,
+      "error_rate": 1.047,
+      "p95_latency_ms": 250.92,
+      "avg_latency_ms": 103.42
+    },
+    {
+      "timestamp": "2026-11-25T03:20:00Z",
+      "requests": 188,
+      "errors": 9,
+      "error_rate": 4.787,
+      "p95_latency_ms": 488.49,
+      "avg_latency_ms": 135.16
+    },
+    {
+      "timestamp": "2026-11-25T03:21:00Z",
+      "requests": 184,
+      "errors": 12,
+      "error_rate": 6.522,
+      "p95_latency_ms": 433.01,
+      "avg_latency_ms": 135.54
+    },
+    {
+      "timestamp": "2026-11-25T03:22:00Z",
+      "requests": 177,
+      "errors": 6,
+      "error_rate": 3.39,
+      "p95_latency_ms": 430.19,
+      "avg_latency_ms": 132.42
+    },
+    {
+      "timestamp": "2026-11-25T03:23:00Z",
+      "requests": 174,
+      "errors": 13,
+      "error_rate": 7.471,
+      "p95_latency_ms": 430.04,
+      "avg_latency_ms": 138.36
+    },
+    {
+      "timestamp": "2026-11-25T03:24:00Z",
+      "requests": 175,
+      "errors": 11,
+      "error_rate": 6.286,
+      "p95_latency_ms": 513.15,
+      "avg_latency_ms": 136.97
+    },
+    {
+      "timestamp": "2026-11-25T03:25:00Z",
+      "requests": 177,
+      "errors": 8,
+      "error_rate": 4.52,
+      "p95_latency_ms": 509.22,
+      "avg_latency_ms": 148.52
+    },
+    {
+      "timestamp": "2026-11-25T03:26:00Z",
+      "requests": 185,
+      "errors": 7,
+      "error_rate": 3.784,
+      "p95_latency_ms": 354.94,
+      "avg_latency_ms": 133.33
+    },
+    {
+      "timestamp": "2026-11-25T03:27:00Z",
+      "requests": 178,
+      "errors": 8,
+      "error_rate": 4.494,
+      "p95_latency_ms": 552.08,
+      "avg_latency_ms": 144.49
+    },
+    {
+      "timestamp": "2026-11-25T03:28:00Z",
+      "requests": 188,
+      "errors": 11,
+      "error_rate": 5.851,
+      "p95_latency_ms": 551.04,
+      "avg_latency_ms": 147.22
+    },
+    {
+      "timestamp": "2026-11-25T03:29:00Z",
+      "requests": 181,
+      "errors": 6,
+      "error_rate": 3.315,
+      "p95_latency_ms": 591.55,
+      "avg_latency_ms": 159.3
+    },
+    {
+      "timestamp": "2026-11-25T03:30:00Z",
+      "requests": 184,
+      "errors": 9,
+      "error_rate": 4.891,
+      "p95_latency_ms": 548.14,
+      "avg_latency_ms": 140.37
+    },
+    {
+      "timestamp": "2026-11-25T03:31:00Z",
+      "requests": 189,
+      "errors": 10,
+      "error_rate": 5.291,
+      "p95_latency_ms": 467.57,
+      "avg_latency_ms": 141.8
+    },
+    {
+      "timestamp": "2026-11-25T03:32:00Z",
+      "requests": 180,
+      "errors": 12,
+      "error_rate": 6.667,
+      "p95_latency_ms": 582.77,
+      "avg_latency_ms": 145.86
+    },
+    {
+      "timestamp": "2026-11-25T03:33:00Z",
+      "requests": 191,
+      "errors": 13,
+      "error_rate": 6.806,
+      "p95_latency_ms": 558.54,
+      "avg_latency_ms": 152.64
+    },
+    {
+      "timestamp": "2026-11-25T03:34:00Z",
+      "requests": 187,
+      "errors": 8,
+      "error_rate": 4.278,
+      "p95_latency_ms": 659.11,
+      "avg_latency_ms": 141.52
+    },
+    {
+      "timestamp": "2026-11-25T03:35:00Z",
+      "requests": 190,
+      "errors": 8,
+      "error_rate": 4.211,
+      "p95_latency_ms": 508.21,
+      "avg_latency_ms": 130.96
+    },
+    {
+      "timestamp": "2026-11-25T03:36:00Z",
+      "requests": 186,
+      "errors": 11,
+      "error_rate": 5.914,
+      "p95_latency_ms": 557.1,
+      "avg_latency_ms": 147.74
+    },
+    {
+      "timestamp": "2026-11-25T03:37:00Z",
+      "requests": 190,
+      "errors": 8,
+      "error_rate": 4.211,
+      "p95_latency_ms": 604.0,
+      "avg_latency_ms": 146.56
+    },
+    {
+      "timestamp": "2026-11-25T03:38:00Z",
+      "requests": 192,
+      "errors": 8,
+      "error_rate": 4.167,
+      "p95_latency_ms": 506.82,
+      "avg_latency_ms": 144.2
+    },
+    {
+      "timestamp": "2026-11-25T03:39:00Z",
+      "requests": 199,
+      "errors": 5,
+      "error_rate": 2.513,
+      "p95_latency_ms": 516.53,
+      "avg_latency_ms": 141.81
+    },
+    {
+      "timestamp": "2026-11-25T03:40:00Z",
+      "requests": 197,
+      "errors": 7,
+      "error_rate": 3.553,
+      "p95_latency_ms": 545.36,
+      "avg_latency_ms": 135.85
+    },
+    {
+      "timestamp": "2026-11-25T03:41:00Z",
+      "requests": 198,
+      "errors": 16,
+      "error_rate": 8.081,
+      "p95_latency_ms": 598.6,
+      "avg_latency_ms": 145.1
+    },
+    {
+      "timestamp": "2026-11-25T03:42:00Z",
+      "requests": 194,
+      "errors": 12,
+      "error_rate": 6.186,
+      "p95_latency_ms": 560.31,
+      "avg_latency_ms": 155.92
+    },
+    {
+      "timestamp": "2026-11-25T03:43:00Z",
+      "requests": 194,
+      "errors": 9,
+      "error_rate": 4.639,
+      "p95_latency_ms": 462.49,
+      "avg_latency_ms": 136.27
+    },
+    {
+      "timestamp": "2026-11-25T03:44:00Z",
+      "requests": 209,
+      "errors": 14,
+      "error_rate": 6.699,
+      "p95_latency_ms": 561.63,
+      "avg_latency_ms": 145.61
+    },
+    {
+      "timestamp": "2026-11-25T03:45:00Z",
+      "requests": 200,
+      "errors": 7,
+      "error_rate": 3.5,
+      "p95_latency_ms": 484.76,
+      "avg_latency_ms": 134.5
+    },
+    {
+      "timestamp": "2026-11-25T03:46:00Z",
+      "requests": 203,
+      "errors": 13,
+      "error_rate": 6.404,
+      "p95_latency_ms": 413.98,
+      "avg_latency_ms": 127.34
+    },
+    {
+      "timestamp": "2026-11-25T03:47:00Z",
+      "requests": 195,
+      "errors": 9,
+      "error_rate": 4.615,
+      "p95_latency_ms": 509.26,
+      "avg_latency_ms": 157.3
+    },
+    {
+      "timestamp": "2026-11-25T03:48:00Z",
+      "requests": 213,
+      "errors": 10,
+      "error_rate": 4.695,
+      "p95_latency_ms": 506.01,
+      "avg_latency_ms": 143.92
+    },
+    {
+      "timestamp": "2026-11-25T03:49:00Z",
+      "requests": 201,
+      "errors": 16,
+      "error_rate": 7.96,
+      "p95_latency_ms": 626.84,
+      "avg_latency_ms": 154.39
+    },
+    {
+      "timestamp": "2026-11-25T03:50:00Z",
+      "requests": 196,
+      "errors": 13,
+      "error_rate": 6.633,
+      "p95_latency_ms": 683.73,
+      "avg_latency_ms": 158.12
+    },
+    {
+      "timestamp": "2026-11-25T03:51:00Z",
+      "requests": 210,
+      "errors": 14,
+      "error_rate": 6.667,
+      "p95_latency_ms": 499.86,
+      "avg_latency_ms": 142.37
+    },
+    {
+      "timestamp": "2026-11-25T03:52:00Z",
+      "requests": 214,
+      "errors": 9,
+      "error_rate": 4.206,
+      "p95_latency_ms": 422.43,
+      "avg_latency_ms": 126.47
+    },
+    {
+      "timestamp": "2026-11-25T03:53:00Z",
+      "requests": 210,
+      "errors": 9,
+      "error_rate": 4.286,
+      "p95_latency_ms": 408.54,
+      "avg_latency_ms": 136.61
+    },
+    {
+      "timestamp": "2026-11-25T03:54:00Z",
+      "requests": 192,
+      "errors": 11,
+      "error_rate": 5.729,
+      "p95_latency_ms": 495.66,
+      "avg_latency_ms": 137.39
+    },
+    {
+      "timestamp": "2026-11-25T03:55:00Z",
+      "requests": 210,
+      "errors": 4,
+      "error_rate": 1.905,
+      "p95_latency_ms": 250.83,
+      "avg_latency_ms": 103.05
+    },
+    {
+      "timestamp": "2026-11-25T03:56:00Z",
+      "requests": 207,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 216.73,
+      "avg_latency_ms": 94.87
+    },
+    {
+      "timestamp": "2026-11-25T03:57:00Z",
+      "requests": 207,
+      "errors": 8,
+      "error_rate": 3.865,
+      "p95_latency_ms": 210.64,
+      "avg_latency_ms": 99.28
+    },
+    {
+      "timestamp": "2026-11-25T03:58:00Z",
+      "requests": 204,
+      "errors": 2,
+      "error_rate": 0.98,
+      "p95_latency_ms": 201.3,
+      "avg_latency_ms": 98.51
+    },
+    {
+      "timestamp": "2026-11-25T03:59:00Z",
+      "requests": 214,
+      "errors": 2,
+      "error_rate": 0.935,
+      "p95_latency_ms": 214.44,
+      "avg_latency_ms": 98.34
+    },
+    {
+      "timestamp": "2026-11-25T04:00:00Z",
+      "requests": 165,
+      "errors": 2,
+      "error_rate": 1.212,
+      "p95_latency_ms": 181.39,
+      "avg_latency_ms": 95.54
+    },
+    {
+      "timestamp": "2026-11-25T04:01:00Z",
+      "requests": 156,
+      "errors": 2,
+      "error_rate": 1.282,
+      "p95_latency_ms": 243.99,
+      "avg_latency_ms": 104.95
+    },
+    {
+      "timestamp": "2026-11-25T04:02:00Z",
+      "requests": 161,
+      "errors": 3,
+      "error_rate": 1.863,
+      "p95_latency_ms": 168.92,
+      "avg_latency_ms": 90.82
+    },
+    {
+      "timestamp": "2026-11-25T04:03:00Z",
+      "requests": 157,
+      "errors": 2,
+      "error_rate": 1.274,
+      "p95_latency_ms": 175.75,
+      "avg_latency_ms": 92.84
+    },
+    {
+      "timestamp": "2026-11-25T04:04:00Z",
+      "requests": 168,
+      "errors": 2,
+      "error_rate": 1.19,
+      "p95_latency_ms": 212.61,
+      "avg_latency_ms": 99.93
+    },
+    {
+      "timestamp": "2026-11-25T04:05:00Z",
+      "requests": 172,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 217.49,
+      "avg_latency_ms": 95.61
+    },
+    {
+      "timestamp": "2026-11-25T04:06:00Z",
+      "requests": 169,
+      "errors": 1,
+      "error_rate": 0.592,
+      "p95_latency_ms": 231.47,
+      "avg_latency_ms": 105.62
+    },
+    {
+      "timestamp": "2026-11-25T04:07:00Z",
+      "requests": 161,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 209.24,
+      "avg_latency_ms": 100.63
+    },
+    {
+      "timestamp": "2026-11-25T04:08:00Z",
+      "requests": 168,
+      "errors": 5,
+      "error_rate": 2.976,
+      "p95_latency_ms": 221.79,
+      "avg_latency_ms": 97.88
+    },
+    {
+      "timestamp": "2026-11-25T04:09:00Z",
+      "requests": 172,
+      "errors": 4,
+      "error_rate": 2.326,
+      "p95_latency_ms": 214.68,
+      "avg_latency_ms": 94.75
+    },
+    {
+      "timestamp": "2026-11-25T04:10:00Z",
+      "requests": 171,
+      "errors": 2,
+      "error_rate": 1.17,
+      "p95_latency_ms": 206.71,
+      "avg_latency_ms": 96.89
+    },
+    {
+      "timestamp": "2026-11-25T04:11:00Z",
+      "requests": 177,
+      "errors": 1,
+      "error_rate": 0.565,
+      "p95_latency_ms": 219.78,
+      "avg_latency_ms": 103.41
+    },
+    {
+      "timestamp": "2026-11-25T04:12:00Z",
+      "requests": 176,
+      "errors": 3,
+      "error_rate": 1.705,
+      "p95_latency_ms": 186.91,
+      "avg_latency_ms": 95.92
+    },
+    {
+      "timestamp": "2026-11-25T04:13:00Z",
+      "requests": 172,
+      "errors": 2,
+      "error_rate": 1.163,
+      "p95_latency_ms": 180.34,
+      "avg_latency_ms": 96.2
+    },
+    {
+      "timestamp": "2026-11-25T04:14:00Z",
+      "requests": 180,
+      "errors": 2,
+      "error_rate": 1.111,
+      "p95_latency_ms": 201.37,
+      "avg_latency_ms": 98.18
+    },
+    {
+      "timestamp": "2026-11-25T04:15:00Z",
+      "requests": 159,
+      "errors": 1,
+      "error_rate": 0.629,
+      "p95_latency_ms": 197.25,
+      "avg_latency_ms": 93.34
+    },
+    {
+      "timestamp": "2026-11-25T04:16:00Z",
+      "requests": 179,
+      "errors": 2,
+      "error_rate": 1.117,
+      "p95_latency_ms": 216.62,
+      "avg_latency_ms": 104.15
+    },
+    {
+      "timestamp": "2026-11-25T04:17:00Z",
+      "requests": 176,
+      "errors": 1,
+      "error_rate": 0.568,
+      "p95_latency_ms": 192.48,
+      "avg_latency_ms": 94.95
+    },
+    {
+      "timestamp": "2026-11-25T04:18:00Z",
+      "requests": 179,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 198.53,
+      "avg_latency_ms": 96.74
+    },
+    {
+      "timestamp": "2026-11-25T04:19:00Z",
+      "requests": 172,
+      "errors": 3,
+      "error_rate": 1.744,
+      "p95_latency_ms": 207.84,
+      "avg_latency_ms": 96.83
+    },
+    {
+      "timestamp": "2026-11-25T04:20:00Z",
+      "requests": 185,
+      "errors": 4,
+      "error_rate": 2.162,
+      "p95_latency_ms": 203.4,
+      "avg_latency_ms": 94.7
+    },
+    {
+      "timestamp": "2026-11-25T04:21:00Z",
+      "requests": 184,
+      "errors": 5,
+      "error_rate": 2.717,
+      "p95_latency_ms": 199.24,
+      "avg_latency_ms": 96.94
+    },
+    {
+      "timestamp": "2026-11-25T04:22:00Z",
+      "requests": 183,
+      "errors": 4,
+      "error_rate": 2.186,
+      "p95_latency_ms": 204.71,
+      "avg_latency_ms": 91.98
+    },
+    {
+      "timestamp": "2026-11-25T04:23:00Z",
+      "requests": 183,
+      "errors": 1,
+      "error_rate": 0.546,
+      "p95_latency_ms": 211.37,
+      "avg_latency_ms": 98.6
+    },
+    {
+      "timestamp": "2026-11-25T04:24:00Z",
+      "requests": 195,
+      "errors": 4,
+      "error_rate": 2.051,
+      "p95_latency_ms": 214.45,
+      "avg_latency_ms": 94.39
+    },
+    {
+      "timestamp": "2026-11-25T04:25:00Z",
+      "requests": 175,
+      "errors": 2,
+      "error_rate": 1.143,
+      "p95_latency_ms": 245.95,
+      "avg_latency_ms": 97.29
+    },
+    {
+      "timestamp": "2026-11-25T04:26:00Z",
+      "requests": 187,
+      "errors": 1,
+      "error_rate": 0.535,
+      "p95_latency_ms": 203.29,
+      "avg_latency_ms": 94.18
+    },
+    {
+      "timestamp": "2026-11-25T04:27:00Z",
+      "requests": 193,
+      "errors": 3,
+      "error_rate": 1.554,
+      "p95_latency_ms": 224.23,
+      "avg_latency_ms": 96.76
+    },
+    {
+      "timestamp": "2026-11-25T04:28:00Z",
+      "requests": 183,
+      "errors": 4,
+      "error_rate": 2.186,
+      "p95_latency_ms": 207.25,
+      "avg_latency_ms": 96.36
+    },
+    {
+      "timestamp": "2026-11-25T04:29:00Z",
+      "requests": 191,
+      "errors": 3,
+      "error_rate": 1.571,
+      "p95_latency_ms": 227.46,
+      "avg_latency_ms": 106.34
+    },
+    {
+      "timestamp": "2026-11-25T04:30:00Z",
+      "requests": 192,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 185.04,
+      "avg_latency_ms": 90.72
+    },
+    {
+      "timestamp": "2026-11-25T04:31:00Z",
+      "requests": 183,
+      "errors": 1,
+      "error_rate": 0.546,
+      "p95_latency_ms": 198.59,
+      "avg_latency_ms": 94.57
+    },
+    {
+      "timestamp": "2026-11-25T04:32:00Z",
+      "requests": 188,
+      "errors": 4,
+      "error_rate": 2.128,
+      "p95_latency_ms": 218.93,
+      "avg_latency_ms": 101.11
+    },
+    {
+      "timestamp": "2026-11-25T04:33:00Z",
+      "requests": 192,
+      "errors": 1,
+      "error_rate": 0.521,
+      "p95_latency_ms": 211.25,
+      "avg_latency_ms": 95.69
+    },
+    {
+      "timestamp": "2026-11-25T04:34:00Z",
+      "requests": 185,
+      "errors": 2,
+      "error_rate": 1.081,
+      "p95_latency_ms": 213.74,
+      "avg_latency_ms": 96.7
+    },
+    {
+      "timestamp": "2026-11-25T04:35:00Z",
+      "requests": 200,
+      "errors": 4,
+      "error_rate": 2.0,
+      "p95_latency_ms": 212.32,
+      "avg_latency_ms": 94.42
+    },
+    {
+      "timestamp": "2026-11-25T04:36:00Z",
+      "requests": 195,
+      "errors": 6,
+      "error_rate": 3.077,
+      "p95_latency_ms": 218.49,
+      "avg_latency_ms": 97.06
+    },
+    {
+      "timestamp": "2026-11-25T04:37:00Z",
+      "requests": 203,
+      "errors": 4,
+      "error_rate": 1.97,
+      "p95_latency_ms": 192.22,
+      "avg_latency_ms": 97.4
+    },
+    {
+      "timestamp": "2026-11-25T04:38:00Z",
+      "requests": 192,
+      "errors": 1,
+      "error_rate": 0.521,
+      "p95_latency_ms": 200.54,
+      "avg_latency_ms": 95.07
+    },
+    {
+      "timestamp": "2026-11-25T04:39:00Z",
+      "requests": 187,
+      "errors": 7,
+      "error_rate": 3.743,
+      "p95_latency_ms": 231.54,
+      "avg_latency_ms": 103.66
+    },
+    {
+      "timestamp": "2026-11-25T04:40:00Z",
+      "requests": 202,
+      "errors": 5,
+      "error_rate": 2.475,
+      "p95_latency_ms": 212.3,
+      "avg_latency_ms": 98.76
+    },
+    {
+      "timestamp": "2026-11-25T04:41:00Z",
+      "requests": 190,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 231.08,
+      "avg_latency_ms": 101.48
+    },
+    {
+      "timestamp": "2026-11-25T04:42:00Z",
+      "requests": 195,
+      "errors": 2,
+      "error_rate": 1.026,
+      "p95_latency_ms": 230.97,
+      "avg_latency_ms": 99.4
+    },
+    {
+      "timestamp": "2026-11-25T04:43:00Z",
+      "requests": 199,
+      "errors": 3,
+      "error_rate": 1.508,
+      "p95_latency_ms": 207.3,
+      "avg_latency_ms": 93.01
+    },
+    {
+      "timestamp": "2026-11-25T04:44:00Z",
+      "requests": 189,
+      "errors": 2,
+      "error_rate": 1.058,
+      "p95_latency_ms": 222.93,
+      "avg_latency_ms": 97.46
+    },
+    {
+      "timestamp": "2026-11-25T04:45:00Z",
+      "requests": 199,
+      "errors": 5,
+      "error_rate": 2.513,
+      "p95_latency_ms": 208.45,
+      "avg_latency_ms": 96.83
+    },
+    {
+      "timestamp": "2026-11-25T04:46:00Z",
+      "requests": 207,
+      "errors": 8,
+      "error_rate": 3.865,
+      "p95_latency_ms": 204.8,
+      "avg_latency_ms": 94.92
+    },
+    {
+      "timestamp": "2026-11-25T04:47:00Z",
+      "requests": 200,
+      "errors": 1,
+      "error_rate": 0.5,
+      "p95_latency_ms": 186.3,
+      "avg_latency_ms": 93.0
+    },
+    {
+      "timestamp": "2026-11-25T04:48:00Z",
+      "requests": 203,
+      "errors": 2,
+      "error_rate": 0.985,
+      "p95_latency_ms": 208.44,
+      "avg_latency_ms": 93.82
+    },
+    {
+      "timestamp": "2026-11-25T04:49:00Z",
+      "requests": 211,
+      "errors": 6,
+      "error_rate": 2.844,
+      "p95_latency_ms": 234.45,
+      "avg_latency_ms": 104.6
+    },
+    {
+      "timestamp": "2026-11-25T04:50:00Z",
+      "requests": 200,
+      "errors": 6,
+      "error_rate": 3.0,
+      "p95_latency_ms": 183.63,
+      "avg_latency_ms": 96.06
+    },
+    {
+      "timestamp": "2026-11-25T04:51:00Z",
+      "requests": 206,
+      "errors": 3,
+      "error_rate": 1.456,
+      "p95_latency_ms": 200.7,
+      "avg_latency_ms": 94.72
+    },
+    {
+      "timestamp": "2026-11-25T04:52:00Z",
+      "requests": 206,
+      "errors": 2,
+      "error_rate": 0.971,
+      "p95_latency_ms": 211.15,
+      "avg_latency_ms": 99.67
+    },
+    {
+      "timestamp": "2026-11-25T04:53:00Z",
+      "requests": 198,
+      "errors": 2,
+      "error_rate": 1.01,
+      "p95_latency_ms": 183.53,
+      "avg_latency_ms": 92.2
+    },
+    {
+      "timestamp": "2026-11-25T04:54:00Z",
+      "requests": 208,
+      "errors": 2,
+      "error_rate": 0.962,
+      "p95_latency_ms": 204.52,
+      "avg_latency_ms": 99.6
+    },
+    {
+      "timestamp": "2026-11-25T04:55:00Z",
+      "requests": 205,
+      "errors": 2,
+      "error_rate": 0.976,
+      "p95_latency_ms": 252.57,
+      "avg_latency_ms": 99.58
+    },
+    {
+      "timestamp": "2026-11-25T04:56:00Z",
+      "requests": 205,
+      "errors": 5,
+      "error_rate": 2.439,
+      "p95_latency_ms": 246.7,
+      "avg_latency_ms": 103.66
+    },
+    {
+      "timestamp": "2026-11-25T04:57:00Z",
+      "requests": 208,
+      "errors": 1,
+      "error_rate": 0.481,
+      "p95_latency_ms": 198.91,
+      "avg_latency_ms": 96.0
+    },
+    {
+      "timestamp": "2026-11-25T04:58:00Z",
+      "requests": 214,
+      "errors": 4,
+      "error_rate": 1.869,
+      "p95_latency_ms": 221.2,
+      "avg_latency_ms": 105.77
+    },
+    {
+      "timestamp": "2026-11-25T04:59:00Z",
+      "requests": 202,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 232.92,
+      "avg_latency_ms": 102.41
+    },
+    {
+      "timestamp": "2026-11-25T05:00:00Z",
+      "requests": 156,
+      "errors": 5,
+      "error_rate": 3.205,
+      "p95_latency_ms": 214.77,
+      "avg_latency_ms": 95.69
+    },
+    {
+      "timestamp": "2026-11-25T05:01:00Z",
+      "requests": 168,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 183.21,
+      "avg_latency_ms": 95.88
+    },
+    {
+      "timestamp": "2026-11-25T05:02:00Z",
+      "requests": 161,
+      "errors": 3,
+      "error_rate": 1.863,
+      "p95_latency_ms": 203.49,
+      "avg_latency_ms": 100.38
+    },
+    {
+      "timestamp": "2026-11-25T05:03:00Z",
+      "requests": 163,
+      "errors": 1,
+      "error_rate": 0.613,
+      "p95_latency_ms": 169.09,
+      "avg_latency_ms": 87.53
+    },
+    {
+      "timestamp": "2026-11-25T05:04:00Z",
+      "requests": 161,
+      "errors": 2,
+      "error_rate": 1.242,
+      "p95_latency_ms": 190.69,
+      "avg_latency_ms": 95.59
+    },
+    {
+      "timestamp": "2026-11-25T05:05:00Z",
+      "requests": 161,
+      "errors": 2,
+      "error_rate": 1.242,
+      "p95_latency_ms": 199.37,
+      "avg_latency_ms": 92.48
+    },
+    {
+      "timestamp": "2026-11-25T05:06:00Z",
+      "requests": 162,
+      "errors": 2,
+      "error_rate": 1.235,
+      "p95_latency_ms": 228.82,
+      "avg_latency_ms": 100.64
+    },
+    {
+      "timestamp": "2026-11-25T05:07:00Z",
+      "requests": 173,
+      "errors": 1,
+      "error_rate": 0.578,
+      "p95_latency_ms": 182.28,
+      "avg_latency_ms": 89.04
+    },
+    {
+      "timestamp": "2026-11-25T05:08:00Z",
+      "requests": 166,
+      "errors": 2,
+      "error_rate": 1.205,
+      "p95_latency_ms": 216.17,
+      "avg_latency_ms": 98.93
+    },
+    {
+      "timestamp": "2026-11-25T05:09:00Z",
+      "requests": 174,
+      "errors": 2,
+      "error_rate": 1.149,
+      "p95_latency_ms": 201.9,
+      "avg_latency_ms": 101.55
+    },
+    {
+      "timestamp": "2026-11-25T05:10:00Z",
+      "requests": 171,
+      "errors": 3,
+      "error_rate": 1.754,
+      "p95_latency_ms": 197.98,
+      "avg_latency_ms": 91.06
+    },
+    {
+      "timestamp": "2026-11-25T05:11:00Z",
+      "requests": 179,
+      "errors": 1,
+      "error_rate": 0.559,
+      "p95_latency_ms": 178.5,
+      "avg_latency_ms": 89.93
+    },
+    {
+      "timestamp": "2026-11-25T05:12:00Z",
+      "requests": 177,
+      "errors": 2,
+      "error_rate": 1.13,
+      "p95_latency_ms": 230.48,
+      "avg_latency_ms": 98.39
+    },
+    {
+      "timestamp": "2026-11-25T05:13:00Z",
+      "requests": 179,
+      "errors": 3,
+      "error_rate": 1.676,
+      "p95_latency_ms": 194.54,
+      "avg_latency_ms": 91.9
+    },
+    {
+      "timestamp": "2026-11-25T05:14:00Z",
+      "requests": 173,
+      "errors": 2,
+      "error_rate": 1.156,
+      "p95_latency_ms": 202.61,
+      "avg_latency_ms": 94.58
+    },
+    {
+      "timestamp": "2026-11-25T05:15:00Z",
+      "requests": 178,
+      "errors": 6,
+      "error_rate": 3.371,
+      "p95_latency_ms": 197.98,
+      "avg_latency_ms": 95.16
+    },
+    {
+      "timestamp": "2026-11-25T05:16:00Z",
+      "requests": 190,
+      "errors": 4,
+      "error_rate": 2.105,
+      "p95_latency_ms": 220.16,
+      "avg_latency_ms": 98.71
+    },
+    {
+      "timestamp": "2026-11-25T05:17:00Z",
+      "requests": 183,
+      "errors": 4,
+      "error_rate": 2.186,
+      "p95_latency_ms": 182.09,
+      "avg_latency_ms": 87.31
+    },
+    {
+      "timestamp": "2026-11-25T05:18:00Z",
+      "requests": 174,
+      "errors": 2,
+      "error_rate": 1.149,
+      "p95_latency_ms": 223.1,
+      "avg_latency_ms": 100.45
+    },
+    {
+      "timestamp": "2026-11-25T05:19:00Z",
+      "requests": 185,
+      "errors": 6,
+      "error_rate": 3.243,
+      "p95_latency_ms": 190.81,
+      "avg_latency_ms": 95.63
+    },
+    {
+      "timestamp": "2026-11-25T05:20:00Z",
+      "requests": 178,
+      "errors": 1,
+      "error_rate": 0.562,
+      "p95_latency_ms": 196.12,
+      "avg_latency_ms": 97.08
+    },
+    {
+      "timestamp": "2026-11-25T05:21:00Z",
+      "requests": 175,
+      "errors": 1,
+      "error_rate": 0.571,
+      "p95_latency_ms": 208.71,
+      "avg_latency_ms": 97.76
+    },
+    {
+      "timestamp": "2026-11-25T05:22:00Z",
+      "requests": 171,
+      "errors": 1,
+      "error_rate": 0.585,
+      "p95_latency_ms": 229.68,
+      "avg_latency_ms": 98.42
+    },
+    {
+      "timestamp": "2026-11-25T05:23:00Z",
+      "requests": 176,
+      "errors": 6,
+      "error_rate": 3.409,
+      "p95_latency_ms": 235.34,
+      "avg_latency_ms": 100.31
+    },
+    {
+      "timestamp": "2026-11-25T05:24:00Z",
+      "requests": 185,
+      "errors": 4,
+      "error_rate": 2.162,
+      "p95_latency_ms": 203.88,
+      "avg_latency_ms": 93.72
+    },
+    {
+      "timestamp": "2026-11-25T05:25:00Z",
+      "requests": 182,
+      "errors": 2,
+      "error_rate": 1.099,
+      "p95_latency_ms": 196.6,
+      "avg_latency_ms": 100.74
+    },
+    {
+      "timestamp": "2026-11-25T05:26:00Z",
+      "requests": 181,
+      "errors": 3,
+      "error_rate": 1.657,
+      "p95_latency_ms": 201.5,
+      "avg_latency_ms": 96.08
+    },
+    {
+      "timestamp": "2026-11-25T05:27:00Z",
+      "requests": 178,
+      "errors": 3,
+      "error_rate": 1.685,
+      "p95_latency_ms": 214.84,
+      "avg_latency_ms": 100.45
+    },
+    {
+      "timestamp": "2026-11-25T05:28:00Z",
+      "requests": 176,
+      "errors": 1,
+      "error_rate": 0.568,
+      "p95_latency_ms": 222.98,
+      "avg_latency_ms": 97.37
+    },
+    {
+      "timestamp": "2026-11-25T05:29:00Z",
+      "requests": 204,
+      "errors": 0,
+      "error_rate": 0.0,
+      "p95_latency_ms": 194.04,
+      "avg_latency_ms": 93.52
+    },
+    {
+      "timestamp": "2026-11-25T05:30:00Z",
+      "requests": 184,
+      "errors": 2,
+      "error_rate": 1.087,
+      "p95_latency_ms": 261.66,
+      "avg_latency_ms": 105.59
+    },
+    {
+      "timestamp": "2026-11-25T05:31:00Z",
+      "requests": 191,
+      "errors": 4,
+      "error_rate": 2.094,
+      "p95_latency_ms": 222.88,
+      "avg_latency_ms": 102.65
+    },
+    {
+      "timestamp": "2026-11-25T05:32:00Z",
+      "requests": 183,
+      "errors": 2,
+      "error_rate": 1.093,
+      "p95_latency_ms": 203.14,
+      "avg_latency_ms": 93.91
+    },
+    {
+      "timestamp": "2026-11-25T05:33:00Z",
+      "requests": 196,
+      "errors": 3,
+      "error_rate": 1.531,
+      "p95_latency_ms": 201.65,
+      "avg_latency_ms": 97.46
+    },
+    {
+      "timestamp": "2026-11-25T05:34:00Z",
+      "requests": 197,
+      "errors": 2,
+      "error_rate": 1.015,
+      "p95_latency_ms": 262.94,
+      "avg_latency_ms": 102.25
+    },
+    {
+      "timestamp": "2026-11-25T05:35:00Z",
+      "requests": 193,
+      "errors": 3,
+      "error_rate": 1.554,
+      "p95_latency_ms": 195.14,
+      "avg_latency_ms": 91.13
+    },
+    {
+      "timestamp": "2026-11-25T05:36:00Z",
+      "requests": 198,
+      "errors": 2,
+      "error_rate": 1.01,
+      "p95_latency_ms": 195.65,
+      "avg_latency_ms": 95.51
+    },
+    {
+      "timestamp": "2026-11-25T05:37:00Z",
+      "requests": 188,
+      "errors": 3,
+      "error_rate": 1.596,
+      "p95_latency_ms": 205.38,
+      "avg_latency_ms": 100.7
+    },
+    {
+      "timestamp": "2026-11-25T05:38:00Z",
+      "requests": 198,
+      "errors": 3,
+      "error_rate": 1.515,
+      "p95_latency_ms": 195.34,
+      "avg_latency_ms": 95.07
+    },
+    {
+      "timestamp": "2026-11-25T05:39:00Z",
+      "requests": 195,
+      "errors": 1,
+      "error_rate": 0.513,
+      "p95_latency_ms": 184.57,
+      "avg_latency_ms": 98.51
+    },
+    {
+      "timestamp": "2026-11-25T05:40:00Z",
+      "requests": 187,
+      "errors": 4,
+      "error_rate": 2.139,
+      "p95_latency_ms": 208.13,
+      "avg_latency_ms": 103.51
+    },
+    {
+      "timestamp": "2026-11-25T05:41:00Z",
+      "requests": 193,
+      "errors": 3,
+      "error_rate": 1.554,
+      "p95_latency_ms": 220.82,
+      "avg_latency_ms": 93.87
+    },
+    {
+      "timestamp": "2026-11-25T05:42:00Z",
+      "requests": 189,
+      "errors": 4,
+      "error_rate": 2.116,
+      "p95_latency_ms": 226.96,
+      "avg_latency_ms": 97.82
+    },
+    {
+      "timestamp": "2026-11-25T05:43:00Z",
+      "requests": 197,
+      "errors": 3,
+      "error_rate": 1.523,
+      "p95_latency_ms": 198.83,
+      "avg_latency_ms": 90.86
+    },
+    {
+      "timestamp": "2026-11-25T05:44:00Z",
+      "requests": 192,
+      "errors": 5,
+      "error_rate": 2.604,
+      "p95_latency_ms": 204.68,
+      "avg_latency_ms": 92.74
+    },
+    {
+      "timestamp": "2026-11-25T05:45:00Z",
+      "requests": 196,
+      "errors": 4,
+      "error_rate": 2.041,
+      "p95_latency_ms": 181.16,
+      "avg_latency_ms": 93.3
+    },
+    {
+      "timestamp": "2026-11-25T05:46:00Z",
+      "requests": 194,
+      "errors": 4,
+      "error_rate": 2.062,
+      "p95_latency_ms": 213.69,
+      "avg_latency_ms": 98.88
+    },
+    {
+      "timestamp": "2026-11-25T05:47:00Z",
+      "requests": 203,
+      "errors": 3,
+      "error_rate": 1.478,
+      "p95_latency_ms": 180.21,
+      "avg_latency_ms": 91.95
+    },
+    {
+      "timestamp": "2026-11-25T05:48:00Z",
+      "requests": 196,
+      "errors": 5,
+      "error_rate": 2.551,
+      "p95_latency_ms": 215.51,
+      "avg_latency_ms": 105.28
+    },
+    {
+      "timestamp": "2026-11-25T05:49:00Z",
+      "requests": 198,
+      "errors": 5,
+      "error_rate": 2.525,
+      "p95_latency_ms": 207.16,
+      "avg_latency_ms": 95.76
+    },
+    {
+      "timestamp": "2026-11-25T05:50:00Z",
+      "requests": 196,
+      "errors": 1,
+      "error_rate": 0.51,
+      "p95_latency_ms": 226.94,
+      "avg_latency_ms": 96.53
+    },
+    {
+      "timestamp": "2026-11-25T05:51:00Z",
+      "requests": 199,
+      "errors": 2,
+      "error_rate": 1.005,
+      "p95_latency_ms": 244.48,
+      "avg_latency_ms": 101.86
+    },
+    {
+      "timestamp": "2026-11-25T05:52:00Z",
+      "requests": 193,
+      "errors": 1,
+      "error_rate": 0.518,
+      "p95_latency_ms": 213.54,
+      "avg_latency_ms": 98.9
+    },
+    {
+      "timestamp": "2026-11-25T05:53:00Z",
+      "requests": 207,
+      "errors": 4,
+      "error_rate": 1.932,
+      "p95_latency_ms": 227.56,
+      "avg_latency_ms": 97.27
+    },
+    {
+      "timestamp": "2026-11-25T05:54:00Z",
+      "requests": 192,
+      "errors": 1,
+      "error_rate": 0.521,
+      "p95_latency_ms": 210.49,
+      "avg_latency_ms": 97.88
+    },
+    {
+      "timestamp": "2026-11-25T05:55:00Z",
+      "requests": 214,
+      "errors": 7,
+      "error_rate": 3.271,
+      "p95_latency_ms": 186.05,
+      "avg_latency_ms": 93.89
+    },
+    {
+      "timestamp": "2026-11-25T05:56:00Z",
+      "requests": 199,
+      "errors": 1,
+      "error_rate": 0.503,
+      "p95_latency_ms": 196.56,
+      "avg_latency_ms": 95.69
+    },
+    {
+      "timestamp": "2026-11-25T05:57:00Z",
+      "requests": 214,
+      "errors": 4,
+      "error_rate": 1.869,
+      "p95_latency_ms": 226.6,
+      "avg_latency_ms": 105.55
+    },
+    {
+      "timestamp": "2026-11-25T05:58:00Z",
+      "requests": 211,
+      "errors": 2,
+      "error_rate": 0.948,
+      "p95_latency_ms": 207.33,
+      "avg_latency_ms": 98.57
+    },
+    {
+      "timestamp": "2026-11-25T05:59:00Z",
+      "requests": 219,
+      "errors": 6,
+      "error_rate": 2.74,
+      "p95_latency_ms": 201.88,
+      "avg_latency_ms": 97.64
+    }
+  ],
+  "services": [
+    {
+      "service": "api-gateway",
+      "requests": 16206,
+      "errors": 227,
+      "error_rate": 1.401,
+      "p95_latency_ms": 180.16,
+      "avg_latency_ms": 94.52
+    },
+    {
+      "service": "search-service",
+      "requests": 10753,
+      "errors": 188,
+      "error_rate": 1.748,
+      "p95_latency_ms": 201.49,
+      "avg_latency_ms": 105.7
+    },
+    {
+      "service": "auth-service",
+      "requests": 8962,
+      "errors": 123,
+      "error_rate": 1.372,
+      "p95_latency_ms": 94.03,
+      "avg_latency_ms": 49.44
+    },
+    {
+      "service": "recommendation-service",
+      "requests": 7921,
+      "errors": 156,
+      "error_rate": 1.969,
+      "p95_latency_ms": 233.89,
+      "avg_latency_ms": 123.26
+    },
+    {
+      "service": "inventory-service",
+      "requests": 7173,
+      "errors": 70,
+      "error_rate": 0.976,
+      "p95_latency_ms": 128.35,
+      "avg_latency_ms": 66.71
+    },
+    {
+      "service": "checkout-service",
+      "requests": 6472,
+      "errors": 373,
+      "error_rate": 5.763,
+      "p95_latency_ms": 542.34,
+      "avg_latency_ms": 180.54
+    },
+    {
+      "service": "payment-service",
+      "requests": 5402,
+      "errors": 115,
+      "error_rate": 2.129,
+      "p95_latency_ms": 312.93,
+      "avg_latency_ms": 166.61
+    },
+    {
+      "service": "notification-service",
+      "requests": 4300,
+      "errors": 35,
+      "error_rate": 0.814,
+      "p95_latency_ms": 84.02,
+      "avg_latency_ms": 43.84
+    }
+  ],
+  "anomalies": [
+    {
+      "timestamp": "2026-11-25T03:20:00Z",
+      "service": "checkout-service",
+      "error_rate": 42.105,
+      "baseline_mean": 0.947,
+      "baseline_std": 2.615,
+      "z_score": 15.74,
+      "requests": 19,
+      "errors": 8,
+      "p95_latency_ms": 874.66
+    },
+    {
+      "timestamp": "2026-11-25T03:21:00Z",
+      "service": "checkout-service",
+      "error_rate": 44.444,
+      "baseline_mean": 2.351,
+      "baseline_std": 7.949,
+      "z_score": 5.3,
+      "requests": 18,
+      "errors": 8,
+      "p95_latency_ms": 912.31
+    },
+    {
+      "timestamp": "2026-11-25T03:23:00Z",
+      "service": "checkout-service",
+      "error_rate": 52.632,
+      "baseline_mean": 4.499,
+      "baseline_std": 11.396,
+      "z_score": 4.22,
+      "requests": 19,
+      "errors": 10,
+      "p95_latency_ms": 1051.59
+    }
+  ],
+  "anomaly_detection": {
+    "method": "rolling 30-min z-score on per-service error rate",
+    "threshold": 3.0,
+    "min_requests_per_minute": 10,
+    "min_error_rate_pct": 20.0
+  }
+}
